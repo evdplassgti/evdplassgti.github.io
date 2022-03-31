@@ -1,0 +1,706 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CategoryTree SyntaxVersion="1">
+  <Folder Name="O365 ProPlus">
+    <Folder Name="ProPlus Versions and Compliance">
+      <Category SyntaxVersion="2" DataModelVersion="13">
+        <Name>ProPlus Version</Name>
+        <Type>package</Type>
+        <Extra>
+          <MinPrivileges>ANONYMOUS</MinPrivileges>
+        </Extra>
+        <Keywords>
+          <Keyword>
+            <Name>1902</Name>
+            <Uid>f5bcd995-e264-4f7f-b5f1-47db8569b6d8</Uid>
+            <Rank>5</Rank>
+            <Selector>select package where package.version ~= "16.0.11328" AND (package.name ~= "Microsoft 365 Apps" OR package.name ~= "Microsoft 365-apps")</Selector>
+            <AutotagRules>
+              <Conditions>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>version</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"16.0.11328"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>name</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"Microsoft 365 Apps"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>name</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"Microsoft 365-apps"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+              </Conditions>
+              <LogicalExpression>1 AND (2 OR 3)</LogicalExpression>
+            </AutotagRules>
+          </Keyword>
+          <Keyword>
+            <Name>1808</Name>
+            <Uid>d4740db1-747e-4f4a-b668-2eeaa1154031</Uid>
+            <Rank>3</Rank>
+            <Selector>select package where package.version ~= "16.0.10730" AND package.name ~= "Microsoft Office 365 ProPlus"</Selector>
+            <AutotagRules>
+              <Conditions>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>version</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"16.0.10730"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>name</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"Microsoft Office 365 ProPlus"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+              </Conditions>
+              <LogicalExpression>1 AND 2</LogicalExpression>
+            </AutotagRules>
+          </Keyword>
+          <Keyword>
+            <Name>1803</Name>
+            <Uid>4933188e-c47c-497d-b257-f51a169293c7</Uid>
+            <Rank>2</Rank>
+            <Selector>select package where package.name ~= "Microsoft Office 365 ProPlus" AND package.version ~= "16.0.9126"</Selector>
+            <AutotagRules>
+              <Conditions>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>name</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"Microsoft Office 365 ProPlus"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>version</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"16.0.9126"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+              </Conditions>
+              <LogicalExpression>1 AND 2</LogicalExpression>
+            </AutotagRules>
+          </Keyword>
+          <Keyword>
+            <Name>1708</Name>
+            <Uid>6cf844a4-1970-40f7-9169-a069ce5b2c4f</Uid>
+            <Rank>1</Rank>
+            <Selector>select package where package.name ~= "Microsoft Office 365 ProPlus" AND package.version ~= "16.0.8431"</Selector>
+            <AutotagRules>
+              <Conditions>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>name</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"Microsoft Office 365 ProPlus"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>version</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"16.0.8431"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+              </Conditions>
+              <LogicalExpression>1 AND 2</LogicalExpression>
+            </AutotagRules>
+          </Keyword>
+          <Keyword>
+            <Name>1809</Name>
+            <Uid>772552ba-0274-4433-86bc-4439b56bbda2</Uid>
+            <Rank>4</Rank>
+            <Selector>select package where package.name ~= "Microsoft Office 365 ProPlus" AND package.version ~= "16.0.10827"</Selector>
+            <AutotagRules>
+              <Conditions>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>name</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"Microsoft Office 365 ProPlus"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>version</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"16.0.10827"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+              </Conditions>
+              <LogicalExpression>1 AND 2</LogicalExpression>
+            </AutotagRules>
+          </Keyword>
+          <Keyword>
+            <Name>1908</Name>
+            <Uid>3e0e82a8-95d7-4013-95f7-96d7c113abe2</Uid>
+            <Rank>6</Rank>
+            <Selector>select package where package.name ~= "Microsoft Office 365 ProPlus" OR package.version ~= "16.0.20516"</Selector>
+            <AutotagRules>
+              <Conditions>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>name</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"Microsoft Office 365 ProPlus"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>version</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"16.0.20516"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+              </Conditions>
+              <LogicalExpression>1 OR 2</LogicalExpression>
+            </AutotagRules>
+          </Keyword>
+          <Keyword>
+            <Name>1912</Name>
+            <Uid>826e3330-e3a9-4450-93d7-9c06e404949d</Uid>
+            <Rank>7</Rank>
+            <Selector>select package where package.name ~= "Microsoft Office 365 ProPlus" OR package.version ~= "16.0.12325"</Selector>
+            <AutotagRules>
+              <Conditions>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>name</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"Microsoft Office 365 ProPlus"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>version</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"16.0.12325"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+              </Conditions>
+              <LogicalExpression>1 OR 2</LogicalExpression>
+            </AutotagRules>
+          </Keyword>
+          <Keyword>
+            <Name>2001</Name>
+            <Uid>926e3330-e3a9-4450-93d7-9c06e404949d</Uid>
+            <Rank>8</Rank>
+            <Selector>select package where package.name ~= "Microsoft Office 365 ProPlus" AND package.version ~= "16.0.12430"</Selector>
+            <AutotagRules>
+              <Conditions>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>name</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"Microsoft Office 365 ProPlus"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>version</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"16.0.12430"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+              </Conditions>
+              <LogicalExpression>1 AND 2</LogicalExpression>
+            </AutotagRules>
+          </Keyword>
+          <Keyword>
+            <Name>2002</Name>
+            <Uid>95daf8c7-600d-4d5b-b35a-d450aba75302</Uid>
+            <Rank>9</Rank>
+            <Selector>select package where package.name ~= "Microsoft Office 365 ProPlus" AND package.version ~= "16.0.12527"</Selector>
+            <AutotagRules>
+              <Conditions>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>name</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"Microsoft Office 365 ProPlus"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>version</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"16.0.12527"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+              </Conditions>
+              <LogicalExpression>1 AND 2</LogicalExpression>
+            </AutotagRules>
+          </Keyword>
+          <Keyword>
+            <Name>2104</Name>
+            <Uid>12d258bf-f4db-430b-86c5-7a9654587660</Uid>
+            <Rank>18</Rank>
+            <Selector>select package where package.version ~= "16.0.13929" AND (package.name ~= "Microsoft 365 Apps" OR package.name ~= "Microsoft 365-apps")</Selector>
+            <AutotagRules>
+              <Conditions>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>version</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"16.0.13929"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>name</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"Microsoft 365 Apps"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>name</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"Microsoft 365-apps"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+              </Conditions>
+              <LogicalExpression>1 AND (2 OR 3)</LogicalExpression>
+            </AutotagRules>
+          </Keyword>
+          <Keyword>
+            <Name>2103</Name>
+            <Uid>2e46602d-cd93-45e6-9ce8-031d4a3baca3</Uid>
+            <Rank>17</Rank>
+            <Selector>select package where package.version ~= "16.0.13901" AND (package.name ~= "Microsoft 365 Apps" OR package.name ~= "Microsoft 365-apps")</Selector>
+            <AutotagRules>
+              <Conditions>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>version</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"16.0.13901"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>name</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"Microsoft 365 Apps"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>name</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"Microsoft 365-apps"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+              </Conditions>
+              <LogicalExpression>1 AND (2 OR 3)</LogicalExpression>
+            </AutotagRules>
+          </Keyword>
+          <Keyword>
+            <Name>2102</Name>
+            <Uid>050665d2-4b78-4a75-90d3-1102230ee767</Uid>
+            <Rank>16</Rank>
+            <Selector>select package where package.version ~= "16.0.13801" AND (package.name ~= "Microsoft 365 Apps" OR package.name ~= "Microsoft 365-apps")</Selector>
+            <AutotagRules>
+              <Conditions>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>version</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"16.0.13801"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>name</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"Microsoft 365 Apps"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>name</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"Microsoft 365-apps"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+              </Conditions>
+              <LogicalExpression>1 AND (2 OR 3)</LogicalExpression>
+            </AutotagRules>
+          </Keyword>
+          <Keyword>
+            <Name>2101</Name>
+            <Uid>40f542f7-ca85-4dff-b91c-5541e128a811</Uid>
+            <Rank>15</Rank>
+            <Selector>select package where package.version ~= "16.0.13628" AND (package.name ~= "Microsoft 365 Apps" OR package.name ~= "Microsoft 365-apps")</Selector>
+            <AutotagRules>
+              <Conditions>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>version</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"16.0.13628"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>name</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"Microsoft 365 Apps"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>name</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"Microsoft 365-apps"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+              </Conditions>
+              <LogicalExpression>1 AND (2 OR 3)</LogicalExpression>
+            </AutotagRules>
+          </Keyword>
+          <Keyword>
+            <Name>2008</Name>
+            <Uid>3ed95ce8-6570-4396-8a58-c8cff96868cf</Uid>
+            <Rank>10</Rank>
+            <Selector>select package where package.version ~= "16.0.13127" AND (package.name ~= "Microsoft 365 Apps" OR package.name ~= "Microsoft 365-apps")</Selector>
+            <AutotagRules>
+              <Conditions>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>version</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"16.0.13127"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>name</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"Microsoft 365 Apps"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>name</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"Microsoft 365-apps"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+              </Conditions>
+              <LogicalExpression>1 AND (2 OR 3)</LogicalExpression>
+            </AutotagRules>
+          </Keyword>
+          <Keyword>
+            <Name>2012</Name>
+            <Uid>ee6a5f3b-6769-45cd-bded-2188816b6b76</Uid>
+            <Rank>14</Rank>
+            <Selector>select package where package.version ~= "16.0.13530" AND (package.name ~= "Microsoft 365 Apps" OR package.name ~= "Microsoft 365-apps")</Selector>
+            <AutotagRules>
+              <Conditions>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>version</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"16.0.13530"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>name</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"Microsoft 365 Apps"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>name</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"Microsoft 365-apps"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+              </Conditions>
+              <LogicalExpression>1 AND (2 OR 3)</LogicalExpression>
+            </AutotagRules>
+          </Keyword>
+          <Keyword>
+            <Name>2011</Name>
+            <Uid>7caddea3-831c-4f8f-b7ed-08b9d2002ece</Uid>
+            <Rank>13</Rank>
+            <Selector>select package where package.version ~= "16.0.13426" AND (package.name ~= "Microsoft 365 Apps" OR package.name ~= "Microsoft 365-apps")</Selector>
+            <AutotagRules>
+              <Conditions>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>version</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"16.0.13426"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>name</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"Microsoft 365 Apps"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>name</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"Microsoft 365-apps"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+              </Conditions>
+              <LogicalExpression>1 AND (2 OR 3)</LogicalExpression>
+            </AutotagRules>
+          </Keyword>
+          <Keyword>
+            <Name>2010</Name>
+            <Uid>747651ab-645a-45b8-8926-38a9915a1949</Uid>
+            <Rank>12</Rank>
+            <Selector>select package where package.version ~= "16.0.13328" AND (package.name ~= "Microsoft 365 Apps" OR package.name ~= "Microsoft 365-apps")</Selector>
+            <AutotagRules>
+              <Conditions>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>version</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"16.0.13328"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>name</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"Microsoft 365 Apps"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>name</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"Microsoft 365-apps"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+              </Conditions>
+              <LogicalExpression>1 AND (2 OR 3)</LogicalExpression>
+            </AutotagRules>
+          </Keyword>
+          <Keyword>
+            <Name>2009</Name>
+            <Uid>86a33957-c3b2-47a9-b12c-d311023d0f7c</Uid>
+            <Rank>11</Rank>
+            <Selector>select package where package.version ~= "16.0.13231" AND (package.name ~= "Microsoft 365 Apps" OR package.name ~= "Microsoft 365-apps")</Selector>
+            <AutotagRules>
+              <Conditions>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>version</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"16.0.13231"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>name</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"Microsoft 365 Apps"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>name</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"Microsoft 365-apps"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+              </Conditions>
+              <LogicalExpression>1 AND (2 OR 3)</LogicalExpression>
+            </AutotagRules>
+          </Keyword>
+          <Keyword>
+            <Name>2105</Name>
+            <Uid>190748cb-8609-4338-94f7-ab95ce73c76a</Uid>
+            <Rank>19</Rank>
+            <Selector>select package where package.version ~= "16.0.14026" AND (package.name ~= "Microsoft 365 Apps" OR package.name ~= "Microsoft 365-apps")</Selector>
+            <AutotagRules>
+              <Conditions>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>version</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"16.0.14026"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>name</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"Microsoft 365 Apps"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>name</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"Microsoft 365-apps"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+              </Conditions>
+              <LogicalExpression>1 AND (2 OR 3)</LogicalExpression>
+            </AutotagRules>
+          </Keyword>
+        </Keywords>
+      </Category>
+    </Folder>
+    <Folder Name="Priority">
+      <Category SyntaxVersion="2" DataModelVersion="13">
+        <Name>ProPlus Required Version</Name>
+        <Type>package</Type>
+        <Extra>
+          <MinPrivileges>ANONYMOUS</MinPrivileges>
+        </Extra>
+        <Keywords>
+          <Keyword>
+            <Name>Target</Name>
+            <Uid>8c65f2fe-656b-48d8-a359-296cc1590f2d</Uid>
+            <Rank>1</Rank>
+            <Selector>select package where (package.name ~= "Microsoft 365 Apps" OR package.name ~= "Microsoft 365-apps") AND (package.version ~= "16.0.13127" OR package.version ~= "16.0.13231" OR package.version ~= "16.0.13328" OR package.version ~= "16.0.13426" OR package.version ~= "16.0.13530" OR package.version ~= "16.0.13628" OR package.version ~= "16.0.13801" OR package.version ~= "16.0.13901" OR package.version ~= "16.0.13929" OR package.version ~= "16.0.14026")</Selector>
+            <AutotagRules>
+              <Conditions>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>name</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"Microsoft 365 Apps"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>name</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"Microsoft 365-apps"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>version</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"16.0.13127"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>version</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"16.0.13231"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>version</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"16.0.13328"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>version</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"16.0.13426"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>version</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"16.0.13530"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>version</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"16.0.13628"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>version</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"16.0.13801"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>version</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"16.0.13901"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>version</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"16.0.13929"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>version</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"16.0.14026"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+              </Conditions>
+              <LogicalExpression>(1 OR 2) AND (3 OR 4 OR 5 OR 6 OR 7 OR 8 OR 9 OR 10 OR 11 OR 12)</LogicalExpression>
+            </AutotagRules>
+          </Keyword>
+          <Keyword>
+            <Name>Other</Name>
+            <Uid>ac529e18-b3e9-4751-a118-749a86161856</Uid>
+            <Rank>2</Rank>
+            <Selector>select package where package.name ~= "Microsoft Office 365 ProPlus" OR package.name ~= "Microsoft 365 Apps" OR package.name ~= "Microsoft 365-apps"</Selector>
+            <AutotagRules>
+              <Conditions>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>name</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"Microsoft Office 365 ProPlus"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>name</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"Microsoft 365 Apps"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+                <ObjectCondition IsTemplate="false">
+                  <Object>package</Object>
+                  <Field>name</Field>
+                  <Comparer>~=</Comparer>
+                  <Value>"Microsoft 365-apps"</Value>
+                  <Operand>string</Operand>
+                </ObjectCondition>
+              </Conditions>
+              <LogicalExpression>1 OR 2 OR 3</LogicalExpression>
+            </AutotagRules>
+          </Keyword>
+        </Keywords>
+      </Category>
+    </Folder>
+  </Folder>
+</CategoryTree>

@@ -1,0 +1,1938 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Pack Description="Portal pack" Name="Portal pack" SyntaxVersion="1">
+ <Contents>
+  <Content Type="PortalModuleCollection">
+   <PortalModuleCollection SyntaxVersion="1">
+    <PortalModule>
+     <Name>Version and Compliance</Name>
+     <Dependencies>
+      <Dependency name="SSW App - O365 ProPlus - Num devices with Required Version" type="metric" uid="69dcb902-0133-4200-8962-f1cc0f5f4d7e"/>
+      <Dependency name="SSW App - O365 ProPlus - Top X Num devices by Binary Version" type="metric" uid="51ca0f92-293f-4ef8-b045-e8c384d1111e"/>
+      <Dependency name="SSW App - Adobe Reader DC - Num devices with Required Version" type="metric" uid="e3b63c6f-057b-4953-88e0-f8eb6be48a36"/>
+      <Dependency name="SSW App - Adobe Reader DC - Top X Num devices by Binary Version" type="metric" uid="7812e571-caa5-4acc-8e1c-c79b3c7faf08"/>
+      <Dependency name="SSW App - Google Chrome - Num devices with Required Version" type="metric" uid="2c3cac9b-ef8f-48fd-8b08-5113b849837f"/>
+      <Dependency name="SSW App - Google Chrome - Top X Num devices by Binary Version" type="metric" uid="a1dffca6-09a7-45bf-bb6b-04bc6350489f"/>
+      <Dependency name="SSW App - 7-Zip - Num devices with Required Version" type="metric" uid="87c879ec-dd99-4d5e-b6dd-4b88f0b60608"/>
+      <Dependency name="SSW App - 7-Zip - Top X Num devices by Binary Version" type="metric" uid="6320053c-cb4d-44d3-871c-c24bc1798583"/>
+      <Dependency name="L2 - Boot &amp; Logon / Days since last reboot score by model" type="metric" uid="943d62e8-35ce-4c40-b46f-c7ae21530123"/>
+      <Dependency name="SSW Dev - Num Days since Last Reboot" type="metric" uid="7a898dc1-0eac-4df8-b3a0-f30b37e6637d"/>
+      <Dependency name="SSW Dev - Num Days since Last Update" type="metric" uid="c0e51469-5114-4fb0-a023-e53f6fc117f6"/>
+      <Dependency name="L2 - Software / OS up-to-date score by model" type="metric" uid="00ed8345-e423-4c19-8f91-0ed7fac25a31"/>
+      <Dependency name="SSW Dev - Num Days since Last Seen" type="metric" uid="9a2ea6dc-55c6-4d54-9c85-d58432785356"/>
+      <Dependency name="SSW Dev - Win10 - Device details by OS" type="metric" uid="46998e49-3fbc-4a83-a659-112a946ebae5"/>
+     </Dependencies>
+     <Payload>
+      <import version="1">
+       <basicModule index="0" name="Version and Compliance" uid="441ae30b-8ea6-42d0-b443-69d756b5a3a8">
+        <dashboards>
+         <dashboard description="" index="1" name="7-Zip" uid="fb8a3ea9-ca2d-4da0-9890-c719d89fa66e">
+          <layout type="H">
+           <children>
+            <child type="V">
+             <children>
+              <child type="L">
+               <children/>
+               <data id="285ad92b-ff7a-4623-8f91-560a95975aa1" minHeight="400" minWidth="318" type="kpiWidget" widgetID="285ad92b-ff7a-4623-8f91-560a95975aa1">
+                <preferredHeight value="400"/>
+                <preferredWidth value="318"/>
+               </data>
+              </child>
+              <child type="L">
+               <children/>
+               <data id="2e3d4d9b-f6ab-4919-a909-0100aad9496a" minHeight="441" minWidth="630" type="tableWidget" widgetID="2e3d4d9b-f6ab-4919-a909-0100aad9496a">
+                <preferredHeight value="441"/>
+                <preferredWidth value="630"/>
+               </data>
+              </child>
+             </children>
+            </child>
+            <child type="L">
+             <children/>
+             <data id="a31c22da-1afb-48f6-b6d3-b39b674925ff" minHeight="310" minWidth="396" type="lineChartWidget" widgetID="a31c22da-1afb-48f6-b6d3-b39b674925ff">
+              <preferredHeight value="410"/>
+              <preferredWidth value="599"/>
+             </data>
+            </child>
+           </children>
+          </layout>
+          <widgets>
+           <widget type="KPI" uid="285ad92b-ff7a-4623-8f91-560a95975aa1">
+            <kpiConfig displayOrientation="VERTICAL" displayThreshold="true" displayVariation="true" title="7-Zip required version">
+             <metrics>
+              <metric displayValue="ABSOLUTE_VALUE" label="Num devices with Required Version" ordering="6" serviceMetric="false" uid="87c879ec-dd99-4d5e-b6dd-4b88f0b60608"/>
+              <metric displayValue="RATIO" label="% devices of with Required Version" ordering="8" serviceMetric="false" uid="87c879ec-dd99-4d5e-b6dd-4b88f0b60608"/>
+             </metrics>
+            </kpiConfig>
+           </widget>
+           <widget type="TABLE" uid="2e3d4d9b-f6ab-4919-a909-0100aad9496a">
+            <tableConfig displayOverallValueColumns="false" displayOverallValueRows="false" numberPerPage="10" sortByOrder="DESC" tableKind="STANDARD" title="7-Zip version dispersion">
+             <columns option="TOP"/>
+             <metrics>
+              <metric displayThreshold="NO" displayValue="ABSOLUTE_VALUE" displayVariation="false" label="7-Zip - Top X Num devices by Binary Version" ordering="1" serviceMetric="false" uid="6320053c-cb4d-44d3-871c-c24bc1798583">
+               <fields name="name" type="FIELD"/>
+               <fields name="version" type="FIELD"/>
+               <fields name="7-Zip Required Version" type="CATEGORY"/>
+              </metric>
+             </metrics>
+             <rows option="TOP"/>
+             <sortRowsBy type="TOP" value="sources"/>
+            </tableConfig>
+           </widget>
+           <widget type="LINE_CHART" uid="a31c22da-1afb-48f6-b6d3-b39b674925ff">
+            <lineChartConfig displayValue="ABSOLUTE_VALUE" legend="true" thresholds="false" title="7-Zip version overview">
+             <metrics>
+              <metric label="Num devices with Req Version" ordering="1" serviceMetric="false" uid="87c879ec-dd99-4d5e-b6dd-4b88f0b60608"/>
+             </metrics>
+             <scale scaleMaxValueType="integer" scaleMaxValueUnit="" scaleType="automatic"/>
+            </lineChartConfig>
+           </widget>
+          </widgets>
+         </dashboard>
+         <dashboard description="" index="2" name="Adobe Acrobat Reader DC" uid="67bfbbde-04bd-4368-9f36-166c486dbdea">
+          <layout type="H">
+           <children>
+            <child type="V">
+             <children>
+              <child type="L">
+               <children/>
+               <data id="d0a18e6e-9306-4e10-9c8f-5694c94f086d" minHeight="400" minWidth="318" type="kpiWidget" widgetID="d0a18e6e-9306-4e10-9c8f-5694c94f086d">
+                <preferredHeight value="400"/>
+                <preferredWidth value="318"/>
+               </data>
+              </child>
+              <child type="L">
+               <children/>
+               <data id="f1facd2a-15ec-4b6a-9b08-4d4f82ce86fd" minHeight="441" minWidth="630" type="tableWidget" widgetID="f1facd2a-15ec-4b6a-9b08-4d4f82ce86fd">
+                <preferredHeight value="441"/>
+                <preferredWidth value="630"/>
+               </data>
+              </child>
+             </children>
+            </child>
+            <child type="L">
+             <children/>
+             <data id="a6317299-334d-4605-a569-d120fbb37bff" minHeight="310" minWidth="396" type="lineChartWidget" widgetID="a6317299-334d-4605-a569-d120fbb37bff">
+              <preferredHeight value="410"/>
+              <preferredWidth value="599"/>
+             </data>
+            </child>
+           </children>
+          </layout>
+          <widgets>
+           <widget type="KPI" uid="d0a18e6e-9306-4e10-9c8f-5694c94f086d">
+            <kpiConfig displayOrientation="VERTICAL" displayThreshold="true" displayVariation="true" title="Required Version">
+             <metrics>
+              <metric displayValue="ABSOLUTE_VALUE" label="Num devices with Required Version" ordering="0" serviceMetric="false" uid="e3b63c6f-057b-4953-88e0-f8eb6be48a36"/>
+              <metric displayValue="RATIO" label="% devices with Required Version" ordering="1" serviceMetric="false" uid="e3b63c6f-057b-4953-88e0-f8eb6be48a36"/>
+             </metrics>
+            </kpiConfig>
+           </widget>
+           <widget type="TABLE" uid="f1facd2a-15ec-4b6a-9b08-4d4f82ce86fd">
+            <tableConfig displayOverallValueColumns="false" displayOverallValueRows="false" numberPerPage="10" sortByOrder="DESC" tableKind="STANDARD" title="Version dispersion">
+             <columns option="TOP"/>
+             <metrics>
+              <metric displayThreshold="NO" displayValue="ABSOLUTE_VALUE" displayVariation="false" label="Adobe Reader DC - Top X Num devices by Binary Version" ordering="1" serviceMetric="false" uid="7812e571-caa5-4acc-8e1c-c79b3c7faf08">
+               <fields name="name" type="FIELD"/>
+               <fields name="version" type="FIELD"/>
+               <fields name="Adobe Reader DC required version" type="CATEGORY"/>
+              </metric>
+             </metrics>
+             <rows option="TOP"/>
+             <sortRowsBy type="TOP" value="sources"/>
+            </tableConfig>
+           </widget>
+           <widget type="LINE_CHART" uid="a6317299-334d-4605-a569-d120fbb37bff">
+            <lineChartConfig displayValue="ABSOLUTE_VALUE" legend="true" thresholds="true" title="Adobe Reader DC overview">
+             <metrics>
+              <metric label="Adobe Reader DC - Num devices of Adobe Reader DC with Required Version" ordering="0" serviceMetric="false" uid="e3b63c6f-057b-4953-88e0-f8eb6be48a36"/>
+             </metrics>
+             <scale scaleMaxValueType="integer" scaleMaxValueUnit="" scaleType="automatic"/>
+            </lineChartConfig>
+           </widget>
+          </widgets>
+         </dashboard>
+         <dashboard description="" index="5" name="Device Compliance" uid="9adbad01-ad78-42b2-80dd-f4a0e1ac29ff">
+          <layout type="H">
+           <children>
+            <child type="H">
+             <children>
+              <child type="V">
+               <children>
+                <child type="L">
+                 <children/>
+                 <data id="79b0b024-93c5-40d1-b486-72e6372b7f92" minHeight="238" minWidth="318" type="kpiWidget" widgetID="79b0b024-93c5-40d1-b486-72e6372b7f92">
+                  <preferredHeight value="238"/>
+                  <preferredWidth value="318"/>
+                 </data>
+                </child>
+                <child type="V">
+                 <children>
+                  <child type="L">
+                   <children/>
+                   <data id="09c394bd-fd77-47af-85ab-d2af2a93ef16" minHeight="268" minWidth="300" type="barChartWidget" widgetID="09c394bd-fd77-47af-85ab-d2af2a93ef16">
+                    <preferredHeight value="268"/>
+                    <preferredWidth value="599"/>
+                   </data>
+                  </child>
+                  <child type="L">
+                   <children/>
+                   <data id="5f81baa1-0871-47c9-89e4-328e39cf191b" minHeight="441" minWidth="408" type="tableWidget" widgetID="5f81baa1-0871-47c9-89e4-328e39cf191b">
+                    <preferredHeight value="441"/>
+                    <preferredWidth value="408"/>
+                   </data>
+                  </child>
+                 </children>
+                </child>
+               </children>
+              </child>
+              <child type="V">
+               <children>
+                <child type="L">
+                 <children/>
+                 <data id="848157c6-14c7-4310-b569-b1e60cd95a7e" minHeight="268" minWidth="300" type="barChartWidget" widgetID="848157c6-14c7-4310-b569-b1e60cd95a7e">
+                  <preferredHeight value="268"/>
+                  <preferredWidth value="599"/>
+                 </data>
+                </child>
+                <child type="L">
+                 <children/>
+                 <data id="763fbd2e-4aa6-448e-9dd9-1d14f742a8b6" minHeight="238" minWidth="318" type="kpiWidget" widgetID="763fbd2e-4aa6-448e-9dd9-1d14f742a8b6">
+                  <preferredHeight value="238"/>
+                  <preferredWidth value="318"/>
+                 </data>
+                </child>
+               </children>
+              </child>
+             </children>
+            </child>
+            <child type="H">
+             <children>
+              <child type="V">
+               <children>
+                <child type="L">
+                 <children/>
+                 <data id="06a8ac40-82c0-4e38-9993-a8653c9888af" minHeight="190" minWidth="318" type="kpiWidget" widgetID="06a8ac40-82c0-4e38-9993-a8653c9888af">
+                  <preferredHeight value="190"/>
+                  <preferredWidth value="318"/>
+                 </data>
+                </child>
+                <child type="L">
+                 <children/>
+                 <data id="70595e27-d13a-40a8-8369-a2d2da7164b2" minHeight="388" minWidth="300" type="barChartWidget" widgetID="70595e27-d13a-40a8-8369-a2d2da7164b2">
+                  <preferredHeight value="388"/>
+                  <preferredWidth value="599"/>
+                 </data>
+                </child>
+               </children>
+              </child>
+              <child type="V">
+               <children>
+                <child type="L">
+                 <children/>
+                 <data id="38b2fcc6-f8c9-47a8-85ec-c30186087077" minHeight="340" minWidth="300" type="barChartWidget" widgetID="38b2fcc6-f8c9-47a8-85ec-c30186087077">
+                  <preferredHeight value="340"/>
+                  <preferredWidth value="599"/>
+                 </data>
+                </child>
+                <child type="L">
+                 <children/>
+                 <data id="f9ffbc30-de69-4feb-98c7-892fcbecdfec" minHeight="441" minWidth="408" type="tableWidget" widgetID="f9ffbc30-de69-4feb-98c7-892fcbecdfec">
+                  <preferredHeight value="441"/>
+                  <preferredWidth value="408"/>
+                 </data>
+                </child>
+               </children>
+              </child>
+             </children>
+            </child>
+           </children>
+          </layout>
+          <widgets>
+           <widget type="KPI" uid="79b0b024-93c5-40d1-b486-72e6372b7f92">
+            <kpiConfig displayOrientation="HORIZONTAL" displayThreshold="true" displayVariation="true" title="Device reboot score">
+             <metrics>
+              <metric displayValue="ABSOLUTE_VALUE" label="Days since last reboot score by model" ordering="0" serviceMetric="false" uid="943d62e8-35ce-4c40-b46f-c7ae21530123"/>
+             </metrics>
+            </kpiConfig>
+           </widget>
+           <widget type="BAR_CHART" uid="09c394bd-fd77-47af-85ab-d2af2a93ef16">
+            <barChartConfig displayValue="ABSOLUTE_VALUE" nbOfBars="5" sortByOrder="ASC" threshold="false" title="Device reboot status (days since last reboot)">
+             <groupBy type="breakdown">
+              <breakdown object="source" type="CATEGORY" value="Days since last reboot"/>
+             </groupBy>
+             <metrics>
+              <metric label="SSW Dev - Num Days since Last Reboot" ordering="0" serviceMetric="false" uid="7a898dc1-0eac-4df8-b3a0-f30b37e6637d"/>
+             </metrics>
+             <scale scaleMaxValueType="integer" scaleMaxValueUnit="" scaleType="automatic"/>
+             <sortBy type="BREAKDOWN" value="Days since last reboot"/>
+            </barChartConfig>
+           </widget>
+           <widget type="TABLE" uid="5f81baa1-0871-47c9-89e4-328e39cf191b">
+            <tableConfig displayOverallValueColumns="false" displayOverallValueRows="false" numberPerPage="10" sortByOrder="ASC" tableKind="STANDARD" title="Device reboot status">
+             <columns option="METRICS"/>
+             <metrics>
+              <metric displayThreshold="NO" displayValue="ABSOLUTE_VALUE" displayVariation="false" label="Numer of devices" ordering="0" serviceMetric="false" uid="7a898dc1-0eac-4df8-b3a0-f30b37e6637d">
+               <fields name="name" type="FIELD"/>
+               <fields name="days_since_last_time" type="FIELD"/>
+              </metric>
+             </metrics>
+             <rows option="BREAKDOWN">
+              <breakdown object="source" type="CATEGORY" value="Days since last reboot"/>
+             </rows>
+             <sortRowsBy type="BREAKDOWN" value="Days since last reboot"/>
+            </tableConfig>
+           </widget>
+           <widget type="BAR_CHART" uid="848157c6-14c7-4310-b569-b1e60cd95a7e">
+            <barChartConfig displayValue="ABSOLUTE_VALUE" nbOfBars="5" sortByOrder="ASC" threshold="false" title="Device update status (days since last OS update)">
+             <groupBy type="breakdown">
+              <breakdown object="source" type="CATEGORY" value="Days since last update"/>
+             </groupBy>
+             <metrics>
+              <metric label="Num Days since Last Update" ordering="0" serviceMetric="false" uid="c0e51469-5114-4fb0-a023-e53f6fc117f6"/>
+             </metrics>
+             <scale scaleMaxValueType="integer" scaleMaxValueUnit="" scaleType="automatic"/>
+             <sortBy type="BREAKDOWN" value="Days since last update"/>
+            </barChartConfig>
+           </widget>
+           <widget type="KPI" uid="763fbd2e-4aa6-448e-9dd9-1d14f742a8b6">
+            <kpiConfig displayOrientation="HORIZONTAL" displayThreshold="true" displayVariation="true" title="Device update score">
+             <metrics>
+              <metric displayValue="ABSOLUTE_VALUE" label="OS up-to-date score by model" ordering="0" serviceMetric="false" uid="00ed8345-e423-4c19-8f91-0ed7fac25a31"/>
+             </metrics>
+            </kpiConfig>
+           </widget>
+           <widget type="KPI" uid="06a8ac40-82c0-4e38-9993-a8653c9888af">
+            <kpiConfig displayOrientation="HORIZONTAL" displayThreshold="false" displayVariation="false" title="">
+             <metrics>
+              <metric displayValue="ABSOLUTE_VALUE" label="Total number of collected devices" ordering="0" serviceMetric="false" uid="9a2ea6dc-55c6-4d54-9c85-d58432785356"/>
+             </metrics>
+            </kpiConfig>
+           </widget>
+           <widget type="BAR_CHART" uid="70595e27-d13a-40a8-8369-a2d2da7164b2">
+            <barChartConfig displayValue="ABSOLUTE_VALUE" nbOfBars="10" sortByOrder="ASC" threshold="false" title="Device usage - days since last seen">
+             <groupBy type="breakdown">
+              <breakdown object="source" type="CATEGORY" value="Days since last seen"/>
+             </groupBy>
+             <metrics>
+              <metric label="SSW Dev - Num Days since Last Seen" ordering="0" serviceMetric="false" uid="9a2ea6dc-55c6-4d54-9c85-d58432785356"/>
+             </metrics>
+             <scale scaleMaxValueType="integer" scaleMaxValueUnit="" scaleType="automatic"/>
+             <sortBy type="BREAKDOWN" value="Days since last seen"/>
+            </barChartConfig>
+           </widget>
+           <widget type="BAR_CHART" uid="38b2fcc6-f8c9-47a8-85ec-c30186087077">
+            <barChartConfig displayValue="ABSOLUTE_VALUE" nbOfBars="10" sortByOrder="DESC" threshold="false" title="">
+             <groupBy type="breakdown">
+              <breakdown object="source" type="FIELD" value="os_name"/>
+             </groupBy>
+             <metrics>
+              <metric label="Device details by OS" ordering="0" serviceMetric="false" uid="46998e49-3fbc-4a83-a659-112a946ebae5"/>
+             </metrics>
+             <scale scaleMaxValueType="integer" scaleMaxValueUnit="" scaleType="automatic"/>
+             <sortBy type="VALUE" value="value"/>
+            </barChartConfig>
+           </widget>
+           <widget type="TABLE" uid="f9ffbc30-de69-4feb-98c7-892fcbecdfec">
+            <tableConfig displayOverallValueColumns="false" displayOverallValueRows="false" numberPerPage="10" sortByOrder="DESC" tableKind="STANDARD" title="Operating System Versions">
+             <columns option="METRICS"/>
+             <metrics>
+              <metric displayThreshold="NO" displayValue="ABSOLUTE_VALUE" displayVariation="false" label="Number of devices" ordering="0" serviceMetric="false" uid="46998e49-3fbc-4a83-a659-112a946ebae5">
+               <fields name="name" type="FIELD"/>
+               <fields name="last_ip_address" type="FIELD"/>
+               <fields name="days_since_last_time" type="FIELD"/>
+              </metric>
+             </metrics>
+             <rows option="BREAKDOWN">
+              <breakdown object="source" type="FIELD" value="os_name"/>
+             </rows>
+             <sortRowsBy type="METRIC" value="46998e49-3fbc-4a83-a659-112a946ebae5_0"/>
+            </tableConfig>
+           </widget>
+          </widgets>
+         </dashboard>
+         <dashboard description="" index="3" name="Google Chrome" uid="06dbe06d-2bd2-4839-95a4-f6810c1fed28">
+          <layout type="H">
+           <children>
+            <child type="V">
+             <children>
+              <child type="L">
+               <children/>
+               <data id="cc86e380-d64a-4aba-a8af-e553d6f2cd7b" minHeight="400" minWidth="318" type="kpiWidget" widgetID="cc86e380-d64a-4aba-a8af-e553d6f2cd7b">
+                <preferredHeight value="400"/>
+                <preferredWidth value="318"/>
+               </data>
+              </child>
+              <child type="L">
+               <children/>
+               <data id="40da06b4-a7fb-4473-a954-d7c0678a768b" minHeight="441" minWidth="630" type="tableWidget" widgetID="40da06b4-a7fb-4473-a954-d7c0678a768b">
+                <preferredHeight value="441"/>
+                <preferredWidth value="630"/>
+               </data>
+              </child>
+             </children>
+            </child>
+            <child type="L">
+             <children/>
+             <data id="315ab772-f09b-4cd8-9ffb-5dc21a856a29" minHeight="310" minWidth="396" type="lineChartWidget" widgetID="315ab772-f09b-4cd8-9ffb-5dc21a856a29">
+              <preferredHeight value="410"/>
+              <preferredWidth value="599"/>
+             </data>
+            </child>
+           </children>
+          </layout>
+          <widgets>
+           <widget type="KPI" uid="cc86e380-d64a-4aba-a8af-e553d6f2cd7b">
+            <kpiConfig displayOrientation="VERTICAL" displayThreshold="true" displayVariation="true" title="Required version">
+             <metrics>
+              <metric displayValue="ABSOLUTE_VALUE" label="Num devices with Required Version" ordering="0" serviceMetric="false" uid="2c3cac9b-ef8f-48fd-8b08-5113b849837f"/>
+              <metric displayValue="RATIO" label="% devices with Required Version" ordering="1" serviceMetric="false" uid="2c3cac9b-ef8f-48fd-8b08-5113b849837f"/>
+             </metrics>
+            </kpiConfig>
+           </widget>
+           <widget type="TABLE" uid="40da06b4-a7fb-4473-a954-d7c0678a768b">
+            <tableConfig displayOverallValueColumns="false" displayOverallValueRows="false" numberPerPage="10" sortByOrder="DESC" tableKind="STANDARD" title="Version dispersion">
+             <columns option="TOP"/>
+             <metrics>
+              <metric displayThreshold="NO" displayValue="ABSOLUTE_VALUE" displayVariation="false" label="Google Chrome - Top X Num devices by Binary Version" ordering="1" serviceMetric="false" uid="a1dffca6-09a7-45bf-bb6b-04bc6350489f">
+               <fields name="name" type="FIELD"/>
+               <fields name="version" type="FIELD"/>
+               <fields name="Chrome Required Versions" type="CATEGORY"/>
+              </metric>
+             </metrics>
+             <rows option="TOP"/>
+             <sortRowsBy type="TOP" value="sources"/>
+            </tableConfig>
+           </widget>
+           <widget type="LINE_CHART" uid="315ab772-f09b-4cd8-9ffb-5dc21a856a29">
+            <lineChartConfig displayValue="ABSOLUTE_VALUE" legend="true" thresholds="true" title="Google Chrome overview">
+             <metrics>
+              <metric label="Google Chrome - Num devices with Required Version" ordering="0" serviceMetric="false" uid="2c3cac9b-ef8f-48fd-8b08-5113b849837f"/>
+             </metrics>
+             <scale scaleMaxValueType="integer" scaleMaxValueUnit="" scaleType="automatic"/>
+            </lineChartConfig>
+           </widget>
+          </widgets>
+         </dashboard>
+         <dashboard description="" index="4" name="Office 365 ProPlus" uid="e7d945b1-811b-4bed-91c0-9d554f72f437">
+          <layout type="H">
+           <children>
+            <child type="V">
+             <children>
+              <child type="L">
+               <children/>
+               <data id="1fcaaf96-f910-4460-866b-2d61634216cc" minHeight="400" minWidth="318" type="kpiWidget" widgetID="1fcaaf96-f910-4460-866b-2d61634216cc">
+                <preferredHeight value="400"/>
+                <preferredWidth value="318"/>
+               </data>
+              </child>
+              <child type="L">
+               <children/>
+               <data id="b7cf335b-783d-4d39-b61a-a98de6e8097f" minHeight="441" minWidth="630" type="tableWidget" widgetID="b7cf335b-783d-4d39-b61a-a98de6e8097f">
+                <preferredHeight value="441"/>
+                <preferredWidth value="630"/>
+               </data>
+              </child>
+             </children>
+            </child>
+            <child type="L">
+             <children/>
+             <data id="fc729aa7-90cf-4e78-9f2a-03d0e567ae18" minHeight="310" minWidth="396" type="lineChartWidget" widgetID="fc729aa7-90cf-4e78-9f2a-03d0e567ae18">
+              <preferredHeight value="410"/>
+              <preferredWidth value="599"/>
+             </data>
+            </child>
+           </children>
+          </layout>
+          <widgets>
+           <widget type="KPI" uid="1fcaaf96-f910-4460-866b-2d61634216cc">
+            <kpiConfig displayOrientation="VERTICAL" displayThreshold="true" displayVariation="true" title="Required version">
+             <metrics>
+              <metric displayValue="ABSOLUTE_VALUE" label="Num devices with Required Version" ordering="2" serviceMetric="false" uid="69dcb902-0133-4200-8962-f1cc0f5f4d7e"/>
+              <metric displayValue="RATIO" label="% devices with Required Version" ordering="3" serviceMetric="false" uid="69dcb902-0133-4200-8962-f1cc0f5f4d7e"/>
+             </metrics>
+            </kpiConfig>
+           </widget>
+           <widget type="TABLE" uid="b7cf335b-783d-4d39-b61a-a98de6e8097f">
+            <tableConfig displayOverallValueColumns="false" displayOverallValueRows="false" numberPerPage="10" sortByOrder="DESC" tableKind="STANDARD" title="Version dispersion">
+             <columns option="TOP"/>
+             <metrics>
+              <metric displayThreshold="NO" displayValue="ABSOLUTE_VALUE" displayVariation="false" label="O365 ProPlus - Top X Num devices by Binary Version" ordering="0" serviceMetric="false" uid="51ca0f92-293f-4ef8-b045-e8c384d1111e">
+               <fields name="name" type="FIELD"/>
+               <fields name="version" type="FIELD"/>
+               <fields name="ProPlus Version" type="CATEGORY"/>
+              </metric>
+             </metrics>
+             <rows option="TOP"/>
+             <sortRowsBy type="TOP" value="sources"/>
+            </tableConfig>
+           </widget>
+           <widget type="LINE_CHART" uid="fc729aa7-90cf-4e78-9f2a-03d0e567ae18">
+            <lineChartConfig displayValue="ABSOLUTE_VALUE" legend="true" thresholds="true" title="Office 365 Proplus overview">
+             <metrics>
+              <metric label="Num devices with Required Version" ordering="0" serviceMetric="false" uid="69dcb902-0133-4200-8962-f1cc0f5f4d7e"/>
+             </metrics>
+             <scale scaleMaxValueType="integer" scaleMaxValueUnit="" scaleType="automatic"/>
+            </lineChartConfig>
+           </widget>
+          </widgets>
+         </dashboard>
+        </dashboards>
+       </basicModule>
+      </import>
+     </Payload>
+    </PortalModule>
+   </PortalModuleCollection>
+  </Content>
+  <Content Type="metrics-tree">
+   <MetricTree SyntaxVersion="1">
+    <Folder Name="Imported metrics">
+     <Metric xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DataModelVersion="13" Name="SSW App - O365 ProPlus - Num devices with Required Version" Status="enabled" SyntaxVersion="3" UID="69dcb902-0133-4200-8962-f1cc0f5f4d7e">
+      <Object>source</Object>
+      <Platforms>
+       <Platform>windows</Platform>
+       <Platform>mac_os</Platform>
+      </Platforms>
+      <Compute>
+       <Count CountingStrategy="keepLastStatus"/>
+      </Compute>
+      <Conditions>
+       <ObjectConditionList>
+        <ObjectCondition IsTemplate="false">
+         <Object>package</Object>
+         <Field>tags</Field>
+         <Comparer>=</Comparer>
+         <Value>"ProPlus Required Version:Target"</Value>
+        </ObjectCondition>
+        <ObjectCondition IsTemplate="false">
+         <Object>package</Object>
+         <Field>name</Field>
+         <Comparer>~=</Comparer>
+         <Value>"Microsoft 365 Apps"</Value>
+         <Operand>string</Operand>
+        </ObjectCondition>
+        <ObjectCondition IsTemplate="false">
+         <Object>package</Object>
+         <Field>name</Field>
+         <Comparer>~=</Comparer>
+         <Value>"Microsoft 365-apps"</Value>
+         <Operand>string</Operand>
+        </ObjectCondition>
+        <ObjectCondition IsTemplate="false">
+         <Object>source</Object>
+         <Field>days_since_last_time</Field>
+         <Comparer>&lt;=</Comparer>
+         <Value>30</Value>
+         <Operand>integer</Operand>
+        </ObjectCondition>
+       </ObjectConditionList>
+       <ObjectsConditionsExpression>1 AND (2 OR 3) AND 4</ObjectsConditionsExpression>
+      </Conditions>
+      <Options>
+       <ObjectsScope>all</ObjectsScope>
+       <Variation IsHigherBetter="true"/>
+       <Thresholds MinimumDevicesLimit="10" Type="ratio">
+        <Value>0.9</Value>
+        <Value>0.95</Value>
+       </Thresholds>
+       <Breakdowns>
+        <Breakdown Object="package" Type="category">ProPlus Version</Breakdown>
+       </Breakdowns>
+       <GroupBy Type="hierarchy"/>
+       <Ratio>
+        <ObjectConditionList>
+         <ObjectCondition IsTemplate="false">
+          <Object>package</Object>
+          <Field>name</Field>
+          <Comparer>~=</Comparer>
+          <Value>"Microsoft 365 Apps"</Value>
+          <Operand>string</Operand>
+         </ObjectCondition>
+         <ObjectCondition IsTemplate="false">
+          <Object>package</Object>
+          <Field>name</Field>
+          <Comparer>~=</Comparer>
+          <Value>"Microsoft 365-apps"</Value>
+          <Operand>string</Operand>
+         </ObjectCondition>
+         <ObjectCondition IsTemplate="false">
+          <Object>source</Object>
+          <Field>days_since_last_time</Field>
+          <Comparer>&lt;=</Comparer>
+          <Value>30</Value>
+          <Operand>integer</Operand>
+         </ObjectCondition>
+        </ObjectConditionList>
+        <ObjectsConditionsExpression>(1 OR 2) AND 3</ObjectsConditionsExpression>
+       </Ratio>
+       <Fields>
+        <Field IsMandatory="true" Type="field">name</Field>
+       </Fields>
+      </Options>
+     </Metric>
+     <Metric xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DataModelVersion="13" Name="SSW App - O365 ProPlus - Top X Num devices by Binary Version" Status="enabled" SyntaxVersion="3" UID="51ca0f92-293f-4ef8-b045-e8c384d1111e">
+      <Object>package</Object>
+      <Platforms>
+       <Platform>windows</Platform>
+       <Platform>mac_os</Platform>
+      </Platforms>
+      <Compute>
+       <Top Aggregate="sources" Number="10" OperationType="sum" Order="highest"/>
+      </Compute>
+      <Conditions>
+       <ObjectConditionList>
+        <ObjectCondition IsTemplate="false">
+         <Object>package</Object>
+         <Field>name</Field>
+         <Comparer>~=</Comparer>
+         <Value>"Microsoft 365 Apps"</Value>
+         <Operand>string</Operand>
+        </ObjectCondition>
+        <ObjectCondition IsTemplate="false">
+         <Object>package</Object>
+         <Field>name</Field>
+         <Comparer>~=</Comparer>
+         <Value>"Microsoft 365-apps"</Value>
+         <Operand>string</Operand>
+        </ObjectCondition>
+        <ObjectCondition IsTemplate="false">
+         <Object>source</Object>
+         <Field>days_since_last_time</Field>
+         <Comparer>&lt;=</Comparer>
+         <Value>30</Value>
+         <Operand>integer</Operand>
+        </ObjectCondition>
+       </ObjectConditionList>
+       <ObjectsConditionsExpression>(1 OR 2) AND 3</ObjectsConditionsExpression>
+      </Conditions>
+      <Options>
+       <ObjectsScope>active_only</ObjectsScope>
+       <Variation IsHigherBetter="true"/>
+       <Thresholds MinimumDevicesLimit="10" Type="ratio">
+        <Value>0.01</Value>
+       </Thresholds>
+       <Breakdowns>
+        <Breakdown Object="package" Type="field">version</Breakdown>
+       </Breakdowns>
+       <GroupBy Type="hierarchy"/>
+       <Fields>
+        <Field IsMandatory="true" Type="field">name</Field>
+        <Field IsMandatory="false" Type="field">version</Field>
+        <Field IsMandatory="true" Type="category">ProPlus Version</Field>
+       </Fields>
+      </Options>
+     </Metric>
+     <Metric xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DataModelVersion="13" Name="SSW App - Adobe Reader DC - Num devices with Required Version" Status="enabled" SyntaxVersion="3" UID="e3b63c6f-057b-4953-88e0-f8eb6be48a36">
+      <Object>source</Object>
+      <Platforms>
+       <Platform>windows</Platform>
+       <Platform>mac_os</Platform>
+      </Platforms>
+      <Compute>
+       <Count CountingStrategy="keepLastStatus"/>
+      </Compute>
+      <Conditions>
+       <ObjectConditionList>
+        <ObjectCondition IsTemplate="false">
+         <Object>package</Object>
+         <Field>tags</Field>
+         <Comparer>=</Comparer>
+         <Value>"Adobe Reader DC required version:Current"</Value>
+        </ObjectCondition>
+        <ObjectCondition IsTemplate="false">
+         <Object>package</Object>
+         <Field>name</Field>
+         <Comparer>~=</Comparer>
+         <Value>"Adobe Acrobat Reader DC"</Value>
+         <Operand>string</Operand>
+        </ObjectCondition>
+        <ObjectCondition IsTemplate="false">
+         <Object>source</Object>
+         <Field>days_since_last_time</Field>
+         <Comparer>&lt;=</Comparer>
+         <Value>30</Value>
+         <Operand>integer</Operand>
+        </ObjectCondition>
+       </ObjectConditionList>
+       <ObjectsConditionsExpression>1 AND 2 AND 3</ObjectsConditionsExpression>
+      </Conditions>
+      <Options>
+       <ObjectsScope>all</ObjectsScope>
+       <Variation IsHigherBetter="true"/>
+       <Thresholds MinimumDevicesLimit="10" Type="ratio">
+        <Value>0.9</Value>
+        <Value>0.95</Value>
+       </Thresholds>
+       <Breakdowns>
+        <Breakdown Object="package" Type="category">Adobe Acrobat Reader DC Versions</Breakdown>
+       </Breakdowns>
+       <GroupBy Type="hierarchy"/>
+       <Ratio>
+        <ObjectConditionList>
+         <ObjectCondition IsTemplate="false">
+          <Object>package</Object>
+          <Field>name</Field>
+          <Comparer>~=</Comparer>
+          <Value>"Adobe Acrobat Reader DC"</Value>
+          <Operand>string</Operand>
+         </ObjectCondition>
+         <ObjectCondition IsTemplate="false">
+          <Object>package</Object>
+          <Field>type</Field>
+          <Comparer>=</Comparer>
+          <Value>package</Value>
+         </ObjectCondition>
+         <ObjectCondition IsTemplate="false">
+          <Object>source</Object>
+          <Field>days_since_last_time</Field>
+          <Comparer>&lt;=</Comparer>
+          <Value>30</Value>
+          <Operand>integer</Operand>
+         </ObjectCondition>
+        </ObjectConditionList>
+        <ObjectsConditionsExpression>1 AND 2 AND 3</ObjectsConditionsExpression>
+       </Ratio>
+       <Fields>
+        <Field IsMandatory="true" Type="field">name</Field>
+       </Fields>
+      </Options>
+     </Metric>
+     <Metric xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DataModelVersion="13" Name="SSW App - Adobe Reader DC - Top X Num devices by Binary Version" Status="enabled" SyntaxVersion="3" UID="7812e571-caa5-4acc-8e1c-c79b3c7faf08">
+      <Object>package</Object>
+      <Platforms>
+       <Platform>windows</Platform>
+       <Platform>mac_os</Platform>
+      </Platforms>
+      <Compute>
+       <Top Aggregate="sources" Number="10" OperationType="sum" Order="highest"/>
+      </Compute>
+      <Conditions>
+       <ObjectConditionList>
+        <ObjectCondition IsTemplate="false">
+         <Object>package</Object>
+         <Field>name</Field>
+         <Comparer>~=</Comparer>
+         <Value>"Adobe Acrobat Reader DC"</Value>
+         <Operand>string</Operand>
+        </ObjectCondition>
+        <ObjectCondition IsTemplate="false">
+         <Object>package</Object>
+         <Field>type</Field>
+         <Comparer>=</Comparer>
+         <Value>package</Value>
+        </ObjectCondition>
+        <ObjectCondition IsTemplate="false">
+         <Object>source</Object>
+         <Field>days_since_last_time</Field>
+         <Comparer>&lt;=</Comparer>
+         <Value>30</Value>
+         <Operand>integer</Operand>
+        </ObjectCondition>
+       </ObjectConditionList>
+       <ObjectsConditionsExpression>1 AND 2 AND 3</ObjectsConditionsExpression>
+      </Conditions>
+      <Options>
+       <ObjectsScope>active_only</ObjectsScope>
+       <Variation IsHigherBetter="true"/>
+       <Thresholds MinimumDevicesLimit="10" Type="ratio">
+        <Value>0.01</Value>
+       </Thresholds>
+       <Breakdowns>
+        <Breakdown Object="package" Type="field">version</Breakdown>
+       </Breakdowns>
+       <GroupBy Type="hierarchy"/>
+       <Fields>
+        <Field IsMandatory="true" Type="field">name</Field>
+        <Field IsMandatory="false" Type="field">version</Field>
+        <Field IsMandatory="true" Type="category">Adobe Reader DC required version</Field>
+       </Fields>
+      </Options>
+     </Metric>
+     <Metric xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DataModelVersion="13" Name="SSW App - Google Chrome - Num devices with Required Version" Status="enabled" SyntaxVersion="3" UID="2c3cac9b-ef8f-48fd-8b08-5113b849837f">
+      <Object>source</Object>
+      <Platforms>
+       <Platform>windows</Platform>
+       <Platform>mac_os</Platform>
+      </Platforms>
+      <Compute>
+       <Count CountingStrategy="keepLastStatus"/>
+      </Compute>
+      <Conditions>
+       <ObjectConditionList>
+        <ObjectCondition IsTemplate="false">
+         <Object>package</Object>
+         <Field>tags</Field>
+         <Comparer>=</Comparer>
+         <Value>"Chrome Required Versions:Current"</Value>
+        </ObjectCondition>
+        <ObjectCondition IsTemplate="false">
+         <Object>package</Object>
+         <Field>name</Field>
+         <Comparer>=</Comparer>
+         <Value>"Google Chrome"</Value>
+         <Operand>string</Operand>
+        </ObjectCondition>
+        <ObjectCondition IsTemplate="false">
+         <Object>source</Object>
+         <Field>days_since_last_time</Field>
+         <Comparer>&lt;=</Comparer>
+         <Value>30</Value>
+         <Operand>integer</Operand>
+        </ObjectCondition>
+       </ObjectConditionList>
+       <ObjectsConditionsExpression>1 AND 2 AND 3</ObjectsConditionsExpression>
+      </Conditions>
+      <Options>
+       <ObjectsScope>all</ObjectsScope>
+       <Variation IsHigherBetter="true"/>
+       <Thresholds MinimumDevicesLimit="10" Type="ratio">
+        <Value>0.9</Value>
+        <Value>0.95</Value>
+       </Thresholds>
+       <Breakdowns>
+        <Breakdown Object="package" Type="category">Chrome Versions</Breakdown>
+       </Breakdowns>
+       <GroupBy Type="hierarchy"/>
+       <Ratio>
+        <ObjectConditionList>
+         <ObjectCondition IsTemplate="false">
+          <Object>package</Object>
+          <Field>name</Field>
+          <Comparer>=</Comparer>
+          <Value>"Google Chrome"</Value>
+          <Operand>string</Operand>
+         </ObjectCondition>
+         <ObjectCondition IsTemplate="false">
+          <Object>source</Object>
+          <Field>days_since_last_time</Field>
+          <Comparer>&lt;=</Comparer>
+          <Value>30</Value>
+          <Operand>integer</Operand>
+         </ObjectCondition>
+        </ObjectConditionList>
+        <ObjectsConditionsExpression>1 AND 2</ObjectsConditionsExpression>
+       </Ratio>
+       <Fields>
+        <Field IsMandatory="true" Type="field">name</Field>
+       </Fields>
+      </Options>
+     </Metric>
+     <Metric xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DataModelVersion="13" Name="SSW App - Google Chrome - Top X Num devices by Binary Version" Status="enabled" SyntaxVersion="3" UID="a1dffca6-09a7-45bf-bb6b-04bc6350489f">
+      <Object>package</Object>
+      <Platforms>
+       <Platform>windows</Platform>
+      </Platforms>
+      <Compute>
+       <Top Aggregate="sources" Number="30" OperationType="sum" Order="highest"/>
+      </Compute>
+      <Conditions>
+       <ObjectConditionList>
+        <ObjectCondition IsTemplate="false">
+         <Object>package</Object>
+         <Field>name</Field>
+         <Comparer>=</Comparer>
+         <Value>"Google Chrome"</Value>
+         <Operand>string</Operand>
+        </ObjectCondition>
+        <ObjectCondition IsTemplate="false">
+         <Object>source</Object>
+         <Field>days_since_last_time</Field>
+         <Comparer>&lt;=</Comparer>
+         <Value>30</Value>
+         <Operand>integer</Operand>
+        </ObjectCondition>
+       </ObjectConditionList>
+       <ObjectsConditionsExpression>1 AND 2</ObjectsConditionsExpression>
+      </Conditions>
+      <Options>
+       <ObjectsScope>active_only</ObjectsScope>
+       <GroupBy Type="hierarchy"/>
+       <Fields>
+        <Field IsMandatory="true" Type="field">name</Field>
+        <Field IsMandatory="false" Type="field">version</Field>
+        <Field IsMandatory="true" Type="category">Chrome Required Versions</Field>
+       </Fields>
+      </Options>
+     </Metric>
+     <Metric xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DataModelVersion="13" Name="SSW App - 7-Zip - Num devices with Required Version" Status="enabled" SyntaxVersion="3" UID="87c879ec-dd99-4d5e-b6dd-4b88f0b60608">
+      <Object>source</Object>
+      <Platforms>
+       <Platform>windows</Platform>
+       <Platform>mac_os</Platform>
+      </Platforms>
+      <Compute>
+       <Count CountingStrategy="keepLastStatus"/>
+      </Compute>
+      <Conditions>
+       <ObjectConditionList>
+        <ObjectCondition IsTemplate="false">
+         <Object>package</Object>
+         <Field>tags</Field>
+         <Comparer>=</Comparer>
+         <Value>"7-Zip Required Version:Current"</Value>
+        </ObjectCondition>
+        <ObjectCondition IsTemplate="false">
+         <Object>package</Object>
+         <Field>name</Field>
+         <Comparer>~=</Comparer>
+         <Value>"7-Zip"</Value>
+         <Operand>string</Operand>
+        </ObjectCondition>
+        <ObjectCondition IsTemplate="false">
+         <Object>source</Object>
+         <Field>days_since_last_time</Field>
+         <Comparer>&lt;=</Comparer>
+         <Value>30</Value>
+         <Operand>integer</Operand>
+        </ObjectCondition>
+       </ObjectConditionList>
+       <ObjectsConditionsExpression>1 AND 2 AND 3</ObjectsConditionsExpression>
+      </Conditions>
+      <Options>
+       <ObjectsScope>all</ObjectsScope>
+       <Variation IsHigherBetter="true"/>
+       <Thresholds MinimumDevicesLimit="10" Type="ratio">
+        <Value>0.9</Value>
+        <Value>0.95</Value>
+       </Thresholds>
+       <Breakdowns>
+        <Breakdown Object="package" Type="category">7-Zip Versions</Breakdown>
+       </Breakdowns>
+       <GroupBy Type="hierarchy"/>
+       <Ratio>
+        <ObjectConditionList>
+         <ObjectCondition IsTemplate="false">
+          <Object>package</Object>
+          <Field>name</Field>
+          <Comparer>~=</Comparer>
+          <Value>"7-Zip"</Value>
+          <Operand>string</Operand>
+         </ObjectCondition>
+         <ObjectCondition IsTemplate="false">
+          <Object>source</Object>
+          <Field>days_since_last_time</Field>
+          <Comparer>&lt;=</Comparer>
+          <Value>30</Value>
+          <Operand>integer</Operand>
+         </ObjectCondition>
+        </ObjectConditionList>
+        <ObjectsConditionsExpression>1 AND 2</ObjectsConditionsExpression>
+       </Ratio>
+       <Fields>
+        <Field IsMandatory="true" Type="field">name</Field>
+       </Fields>
+      </Options>
+     </Metric>
+     <Metric xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DataModelVersion="13" Name="SSW App - 7-Zip - Top X Num devices by Binary Version" Status="enabled" SyntaxVersion="3" UID="6320053c-cb4d-44d3-871c-c24bc1798583">
+      <Object>package</Object>
+      <Platforms>
+       <Platform>windows</Platform>
+       <Platform>mac_os</Platform>
+      </Platforms>
+      <Compute>
+       <Top Aggregate="sources" Number="10" OperationType="sum" Order="highest"/>
+      </Compute>
+      <Conditions>
+       <ObjectConditionList>
+        <ObjectCondition IsTemplate="false">
+         <Object>package</Object>
+         <Field>name</Field>
+         <Comparer>~=</Comparer>
+         <Value>"7-Zip"</Value>
+         <Operand>string</Operand>
+        </ObjectCondition>
+        <ObjectCondition IsTemplate="false">
+         <Object>source</Object>
+         <Field>days_since_last_time</Field>
+         <Comparer>&lt;=</Comparer>
+         <Value>30</Value>
+         <Operand>integer</Operand>
+        </ObjectCondition>
+       </ObjectConditionList>
+       <ObjectsConditionsExpression>1 AND 2</ObjectsConditionsExpression>
+      </Conditions>
+      <Options>
+       <ObjectsScope>active_only</ObjectsScope>
+       <Variation IsHigherBetter="true"/>
+       <Thresholds MinimumDevicesLimit="10" Type="ratio">
+        <Value>0.01</Value>
+       </Thresholds>
+       <Breakdowns>
+        <Breakdown Object="package" Type="field">version</Breakdown>
+       </Breakdowns>
+       <GroupBy Type="hierarchy"/>
+       <Fields>
+        <Field IsMandatory="true" Type="field">name</Field>
+        <Field IsMandatory="false" Type="field">version</Field>
+        <Field IsMandatory="true" Type="category">7-Zip Required Version</Field>
+       </Fields>
+      </Options>
+     </Metric>
+     <Metric xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DataModelVersion="13" Name="L2 - Boot &amp; Logon / Days since last reboot score by model" Status="enabled" SyntaxVersion="3" UID="943d62e8-35ce-4c40-b46f-c7ae21530123">
+      <Object>source</Object>
+      <Platforms>
+       <Platform>windows</Platform>
+       <Platform>mac_os</Platform>
+      </Platforms>
+      <Compute>
+       <Activity AggregateName="score_76e5e918ad454dc7966b86a1bb2c879a" OperationType="mean" Type="field"/>
+      </Compute>
+      <Conditions>
+       <ObjectConditionList>
+        <ObjectCondition IsTemplate="false">
+         <Object>source</Object>
+         <Field>score_76e5e918ad454dc7966b86a1bb2c879a</Field>
+         <Comparer>&gt;=</Comparer>
+         <Value>0.00000</Value>
+         <Operand>float</Operand>
+        </ObjectCondition>
+        <ObjectCondition IsTemplate="false">
+         <Object>source</Object>
+         <Field>tags</Field>
+         <Comparer>!=</Comparer>
+         <Value>"Model:"</Value>
+        </ObjectCondition>
+       </ObjectConditionList>
+       <ObjectsConditionsExpression>1 AND 2</ObjectsConditionsExpression>
+      </Conditions>
+      <Options>
+       <ObjectsScope>all</ObjectsScope>
+       <Variation IsHigherBetter="true"/>
+       <Thresholds Type="absolute">
+        <Value>6</Value>
+        <Value>10</Value>
+       </Thresholds>
+       <Breakdowns>
+        <Breakdown Object="source" Type="category">Model</Breakdown>
+       </Breakdowns>
+       <GroupBy Type="hierarchy"/>
+      </Options>
+     </Metric>
+     <Metric xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DataModelVersion="13" Name="SSW Dev - Num Days since Last Reboot" Status="enabled" SyntaxVersion="3" UID="7a898dc1-0eac-4df8-b3a0-f30b37e6637d">
+      <Object>source</Object>
+      <Platforms>
+       <Platform>windows</Platform>
+      </Platforms>
+      <Compute>
+       <Count CountingStrategy="keepLastStatus"/>
+      </Compute>
+      <Conditions>
+       <ObjectConditionList>
+        <ObjectCondition IsTemplate="false">
+         <Object>source</Object>
+         <Field>days_since_last_time</Field>
+         <Comparer>&lt;=</Comparer>
+         <Value>0</Value>
+         <Operand>integer</Operand>
+        </ObjectCondition>
+       </ObjectConditionList>
+       <ObjectsConditionsExpression>1</ObjectsConditionsExpression>
+      </Conditions>
+      <Options>
+       <ObjectsScope>all</ObjectsScope>
+       <Breakdowns>
+        <Breakdown Object="source" Type="category">Days since last reboot</Breakdown>
+       </Breakdowns>
+       <GroupBy Type="hierarchy"/>
+       <Ratio>
+        <ObjectConditionList/>
+       </Ratio>
+       <Fields>
+        <Field IsMandatory="true" Type="field">name</Field>
+        <Field IsMandatory="false" Type="field">days_since_last_time</Field>
+        <Field IsMandatory="true" Type="category">Days since last reboot</Field>
+       </Fields>
+      </Options>
+     </Metric>
+     <Metric xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DataModelVersion="13" Name="SSW Dev - Num Days since Last Update" Status="enabled" SyntaxVersion="3" UID="c0e51469-5114-4fb0-a023-e53f6fc117f6">
+      <Object>source</Object>
+      <Platforms>
+       <Platform>windows</Platform>
+      </Platforms>
+      <Compute>
+       <Count CountingStrategy="keepLastStatus"/>
+      </Compute>
+      <Conditions>
+       <ObjectConditionList>
+        <ObjectCondition IsTemplate="false">
+         <Object>source</Object>
+         <Field>days_since_last_time</Field>
+         <Comparer>&lt;=</Comparer>
+         <Value>0</Value>
+         <Operand>integer</Operand>
+        </ObjectCondition>
+       </ObjectConditionList>
+       <ObjectsConditionsExpression>1</ObjectsConditionsExpression>
+      </Conditions>
+      <Options>
+       <ObjectsScope>all</ObjectsScope>
+       <Breakdowns>
+        <Breakdown Object="source" Type="category">Days since last update</Breakdown>
+       </Breakdowns>
+       <GroupBy Type="hierarchy"/>
+       <Ratio>
+        <ObjectConditionList/>
+       </Ratio>
+       <Fields>
+        <Field IsMandatory="true" Type="field">name</Field>
+        <Field IsMandatory="false" Type="field">days_since_last_time</Field>
+        <Field IsMandatory="false" Type="field">days_since_updates</Field>
+        <Field IsMandatory="true" Type="category">Days since last update</Field>
+       </Fields>
+      </Options>
+     </Metric>
+     <Metric xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DataModelVersion="13" Name="L2 - Software / OS up-to-date score by model" Status="enabled" SyntaxVersion="3" UID="00ed8345-e423-4c19-8f91-0ed7fac25a31">
+      <Object>source</Object>
+      <Platforms>
+       <Platform>windows</Platform>
+       <Platform>mac_os</Platform>
+      </Platforms>
+      <Compute>
+       <Activity AggregateName="score_4ff95ca936e64156954470304b291435" OperationType="mean" Type="field"/>
+      </Compute>
+      <Conditions>
+       <ObjectConditionList>
+        <ObjectCondition IsTemplate="false">
+         <Object>source</Object>
+         <Field>score_4ff95ca936e64156954470304b291435</Field>
+         <Comparer>&gt;=</Comparer>
+         <Value>0.00000</Value>
+         <Operand>float</Operand>
+        </ObjectCondition>
+        <ObjectCondition IsTemplate="false">
+         <Object>source</Object>
+         <Field>tags</Field>
+         <Comparer>!=</Comparer>
+         <Value>"Model:"</Value>
+        </ObjectCondition>
+       </ObjectConditionList>
+       <ObjectsConditionsExpression>1 AND 2</ObjectsConditionsExpression>
+      </Conditions>
+      <Options>
+       <ObjectsScope>all</ObjectsScope>
+       <Variation IsHigherBetter="true"/>
+       <Thresholds Type="absolute">
+        <Value>6</Value>
+        <Value>10</Value>
+       </Thresholds>
+       <Breakdowns>
+        <Breakdown Object="source" Type="category">Model</Breakdown>
+       </Breakdowns>
+       <GroupBy Type="hierarchy"/>
+      </Options>
+     </Metric>
+     <Metric xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DataModelVersion="13" Name="SSW Dev - Num Days since Last Seen" Status="enabled" SyntaxVersion="3" UID="9a2ea6dc-55c6-4d54-9c85-d58432785356">
+      <Object>source</Object>
+      <Platforms>
+       <Platform>windows</Platform>
+      </Platforms>
+      <Compute>
+       <Count CountingStrategy="keepLastStatus"/>
+      </Compute>
+      <Conditions>
+       <ObjectConditionList/>
+      </Conditions>
+      <Options>
+       <ObjectsScope>all</ObjectsScope>
+       <Breakdowns>
+        <Breakdown Object="source" Type="category">Days since last seen</Breakdown>
+       </Breakdowns>
+       <GroupBy Type="hierarchy"/>
+       <Ratio>
+        <ObjectConditionList/>
+       </Ratio>
+       <Fields>
+        <Field IsMandatory="true" Type="field">name</Field>
+        <Field IsMandatory="false" Type="field">days_since_last_time</Field>
+        <Field IsMandatory="true" Type="category">Days since last seen</Field>
+       </Fields>
+      </Options>
+     </Metric>
+     <Metric xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DataModelVersion="13" Name="SSW Dev - Win10 - Device details by OS" Status="enabled" SyntaxVersion="3" UID="46998e49-3fbc-4a83-a659-112a946ebae5">
+      <Object>source</Object>
+      <Platforms>
+       <Platform>windows</Platform>
+       <Platform>mac_os</Platform>
+      </Platforms>
+      <Compute>
+       <Count CountingStrategy="keepLastStatus"/>
+      </Compute>
+      <Conditions>
+       <ObjectConditionList>
+        <ObjectCondition IsTemplate="false">
+         <Object>source</Object>
+         <Field>days_since_last_time</Field>
+         <Comparer>&lt;=</Comparer>
+         <Value>30</Value>
+         <Operand>integer</Operand>
+        </ObjectCondition>
+        <ObjectCondition IsTemplate="false">
+         <Object>source</Object>
+         <Field>os_name</Field>
+         <Comparer>~=</Comparer>
+         <Value>"Windows 10"</Value>
+         <Operand>string</Operand>
+        </ObjectCondition>
+        <ObjectCondition IsTemplate="false">
+         <Object>source</Object>
+         <Field>os_name</Field>
+         <Comparer>~=</Comparer>
+         <Value>"Windows 10"</Value>
+         <Operand>string</Operand>
+        </ObjectCondition>
+       </ObjectConditionList>
+       <ObjectsConditionsExpression>1 AND 2 AND 3</ObjectsConditionsExpression>
+      </Conditions>
+      <Options>
+       <ObjectsScope>all</ObjectsScope>
+       <Breakdowns>
+        <Breakdown Object="source" Type="field">os_name</Breakdown>
+       </Breakdowns>
+       <GroupBy Type="hierarchy"/>
+       <Fields>
+        <Field IsMandatory="true" Type="field">name</Field>
+        <Field IsMandatory="false" Type="field">last_ip_address</Field>
+        <Field IsMandatory="false" Type="field">days_since_last_time</Field>
+        <Field IsMandatory="false" Type="field">os_name</Field>
+       </Fields>
+      </Options>
+     </Metric>
+    </Folder>
+   </MetricTree>
+  </Content>
+  <Content Type="fields-tree">
+	  <CategoryTree SyntaxVersion="1">
+	  <Folder Name="Sogeti Smart Workspace">
+		<Folder Name="Applications">
+		  <Folder Name="7-Zip">
+			<Category SyntaxVersion="2" DataModelVersion="13">
+			  <Name>7-Zip Versions</Name>
+			  <Type>package</Type>
+			  <Extra>
+				<MinPrivileges>ANONYMOUS</MinPrivileges>
+			  </Extra>
+			  <Keywords>
+				<Keyword>
+				  <Name>19.00</Name>
+				  <Uid>9160ca37-ed15-4463-a45d-100315eb44a6</Uid>
+				  <Rank>2</Rank>
+				  <Selector>select package where package.name ~= "7-Zip 19.00"</Selector>
+				  <AutotagRules>
+					<Conditions>
+					  <ObjectCondition IsTemplate="false">
+						<Object>package</Object>
+						<Field>name</Field>
+						<Comparer>~=</Comparer>
+						<Value>"7-Zip 19.00"</Value>
+						<Operand>string</Operand>
+					  </ObjectCondition>
+					</Conditions>
+					<LogicalExpression>1</LogicalExpression>
+				  </AutotagRules>
+				</Keyword>
+				<Keyword>
+				  <Name>18.05</Name>
+				  <Uid>0c86b905-0ffd-40df-b189-f546b3427ee9</Uid>
+				  <Rank>1</Rank>
+				  <Selector>select package where package.name ~= "7-Zip 18.05"</Selector>
+				  <AutotagRules>
+					<Conditions>
+					  <ObjectCondition IsTemplate="false">
+						<Object>package</Object>
+						<Field>name</Field>
+						<Comparer>~=</Comparer>
+						<Value>"7-Zip 18.05"</Value>
+						<Operand>string</Operand>
+					  </ObjectCondition>
+					</Conditions>
+					<LogicalExpression>1</LogicalExpression>
+				  </AutotagRules>
+				</Keyword>
+				<Keyword>
+				  <Name>Other</Name>
+				  <Uid>8bff9b44-4f20-439b-a805-06a0b9aee4c3</Uid>
+				  <Rank>4</Rank>
+				  <Selector>select package where package.name ~= "7-Zip"</Selector>
+				  <AutotagRules>
+					<Conditions>
+					  <ObjectCondition IsTemplate="false">
+						<Object>package</Object>
+						<Field>name</Field>
+						<Comparer>~=</Comparer>
+						<Value>"7-Zip"</Value>
+						<Operand>string</Operand>
+					  </ObjectCondition>
+					</Conditions>
+					<LogicalExpression>1</LogicalExpression>
+				  </AutotagRules>
+				</Keyword>
+			  </Keywords>
+			</Category>
+			<Category SyntaxVersion="2" DataModelVersion="13">
+			  <Name>7-Zip Required Version</Name>
+			  <Type>package</Type>
+			  <Extra>
+				<MinPrivileges>ANONYMOUS</MinPrivileges>
+			  </Extra>
+			  <Keywords>
+				<Keyword>
+				  <Name>Current</Name>
+				  <Uid>d7f3bb76-8e0e-4b52-99bc-cf965657c5dc</Uid>
+				  <Rank>1</Rank>
+				  <Selector>select package where package.name ~= "7-Zip 19.00" AND package.name like "*(x64*"</Selector>
+				  <AutotagRules>
+					<Conditions>
+					  <ObjectCondition IsTemplate="false">
+						<Object>package</Object>
+						<Field>name</Field>
+						<Comparer>~=</Comparer>
+						<Value>"7-Zip 19.00"</Value>
+						<Operand>string</Operand>
+					  </ObjectCondition>
+					  <ObjectCondition IsTemplate="false">
+						<Object>package</Object>
+						<Field>name</Field>
+						<Comparer>like</Comparer>
+						<Value>"*(x64*"</Value>
+						<Operand>pattern</Operand>
+					  </ObjectCondition>
+					</Conditions>
+					<LogicalExpression>1 AND 2</LogicalExpression>
+				  </AutotagRules>
+				</Keyword>
+				<Keyword>
+				  <Name>Other</Name>
+				  <Uid>b8fa8c49-6321-4ed9-8047-032b08622fda</Uid>
+				  <Rank>2</Rank>
+				  <Selector>select package where package.name ~= "7-Zip"</Selector>
+				  <AutotagRules>
+					<Conditions>
+					  <ObjectCondition IsTemplate="false">
+						<Object>package</Object>
+						<Field>name</Field>
+						<Comparer>~=</Comparer>
+						<Value>"7-Zip"</Value>
+						<Operand>string</Operand>
+					  </ObjectCondition>
+					</Conditions>
+					<LogicalExpression>1</LogicalExpression>
+				  </AutotagRules>
+				</Keyword>
+			  </Keywords>
+			</Category>
+		  </Folder>
+		  <Folder Name="Adobe Acrobat Reader">
+			<Category SyntaxVersion="2" DataModelVersion="13">
+			  <Name>Adobe Acrobat Reader DC Versions</Name>
+			  <Type>package</Type>
+			  <Extra>
+				<MinPrivileges>ANONYMOUS</MinPrivileges>
+			  </Extra>
+			  <Keywords>
+				<Keyword>
+				  <Name>21.001.20155</Name>
+				  <Uid>0c86b905-0ffd-40df-b189-f546b3427ee9</Uid>
+				  <Rank>3</Rank>
+				  <Selector>select package where package.name ~= "Adobe Acrobat Reader DC" AND package.version = "21.001.20155" AND package.type = package</Selector>
+				  <AutotagRules>
+					<Conditions>
+					  <ObjectCondition IsTemplate="false">
+						<Object>package</Object>
+						<Field>name</Field>
+						<Comparer>~=</Comparer>
+						<Value>"Adobe Acrobat Reader DC"</Value>
+						<Operand>string</Operand>
+					  </ObjectCondition>
+					  <ObjectCondition IsTemplate="false">
+						<Object>package</Object>
+						<Field>version</Field>
+						<Comparer>=</Comparer>
+						<Value>"21.001.20155"</Value>
+						<Operand>string</Operand>
+					  </ObjectCondition>
+					  <ObjectCondition IsTemplate="false">
+						<Object>package</Object>
+						<Field>type</Field>
+						<Comparer>=</Comparer>
+						<Value>package</Value>
+					  </ObjectCondition>
+					</Conditions>
+					<LogicalExpression>1 AND 2 AND 3</LogicalExpression>
+				  </AutotagRules>
+				</Keyword>
+				<Keyword>
+				  <Name>21.001</Name>
+				  <Uid>8129847f-415d-48c1-9e76-35666fab26c7</Uid>
+				  <Rank>4</Rank>
+				  <Selector>select package where package.name ~= "Adobe Acrobat Reader DC" AND package.version ~= "21.001" AND package.type = package</Selector>
+				  <AutotagRules>
+					<Conditions>
+					  <ObjectCondition IsTemplate="false">
+						<Object>package</Object>
+						<Field>name</Field>
+						<Comparer>~=</Comparer>
+						<Value>"Adobe Acrobat Reader DC"</Value>
+						<Operand>string</Operand>
+					  </ObjectCondition>
+					  <ObjectCondition IsTemplate="false">
+						<Object>package</Object>
+						<Field>version</Field>
+						<Comparer>~=</Comparer>
+						<Value>"21.001"</Value>
+						<Operand>string</Operand>
+					  </ObjectCondition>
+					  <ObjectCondition IsTemplate="false">
+						<Object>package</Object>
+						<Field>type</Field>
+						<Comparer>=</Comparer>
+						<Value>package</Value>
+					  </ObjectCondition>
+					</Conditions>
+					<LogicalExpression>1 AND 2 AND 3</LogicalExpression>
+				  </AutotagRules>
+				</Keyword>
+				<Keyword>
+				  <Name>21.005.20048</Name>
+				  <Uid>9b442cf0-021c-472f-ac46-b0f5ba3633e1</Uid>
+				  <Rank>1</Rank>
+				  <Selector>select package where package.name ~= "Adobe Acrobat Reader DC" AND package.version = "21.005.20048" AND package.type = package</Selector>
+				  <AutotagRules>
+					<Conditions>
+					  <ObjectCondition IsTemplate="false">
+						<Object>package</Object>
+						<Field>name</Field>
+						<Comparer>~=</Comparer>
+						<Value>"Adobe Acrobat Reader DC"</Value>
+						<Operand>string</Operand>
+					  </ObjectCondition>
+					  <ObjectCondition IsTemplate="false">
+						<Object>package</Object>
+						<Field>version</Field>
+						<Comparer>=</Comparer>
+						<Value>"21.005.20048"</Value>
+						<Operand>string</Operand>
+					  </ObjectCondition>
+					  <ObjectCondition IsTemplate="false">
+						<Object>package</Object>
+						<Field>type</Field>
+						<Comparer>=</Comparer>
+						<Value>package</Value>
+					  </ObjectCondition>
+					</Conditions>
+					<LogicalExpression>1 AND 2 AND 3</LogicalExpression>
+				  </AutotagRules>
+				</Keyword>
+				<Keyword>
+				  <Name>21.005</Name>
+				  <Uid>8d8d25b6-ec65-456e-a5c7-c579c656c2b5</Uid>
+				  <Rank>2</Rank>
+				  <Selector>select package where package.name ~= "Adobe Acrobat Reader DC" AND package.version ~= "21.005" AND package.type = package</Selector>
+				  <AutotagRules>
+					<Conditions>
+					  <ObjectCondition IsTemplate="false">
+						<Object>package</Object>
+						<Field>name</Field>
+						<Comparer>~=</Comparer>
+						<Value>"Adobe Acrobat Reader DC"</Value>
+						<Operand>string</Operand>
+					  </ObjectCondition>
+					  <ObjectCondition IsTemplate="false">
+						<Object>package</Object>
+						<Field>version</Field>
+						<Comparer>~=</Comparer>
+						<Value>"21.005"</Value>
+						<Operand>string</Operand>
+					  </ObjectCondition>
+					  <ObjectCondition IsTemplate="false">
+						<Object>package</Object>
+						<Field>type</Field>
+						<Comparer>=</Comparer>
+						<Value>package</Value>
+					  </ObjectCondition>
+					</Conditions>
+					<LogicalExpression>1 AND 2 AND 3</LogicalExpression>
+				  </AutotagRules>
+				</Keyword>
+				<Keyword>
+				  <Name>Other</Name>
+				  <Uid>091c8228-1c48-4787-a441-0e8ca66c6731</Uid>
+				  <Rank>5</Rank>
+				  <Selector>select package where package.name ~= "Adobe Acrobat Reader DC" AND package.type = package</Selector>
+				  <AutotagRules>
+					<Conditions>
+					  <ObjectCondition IsTemplate="false">
+						<Object>package</Object>
+						<Field>name</Field>
+						<Comparer>~=</Comparer>
+						<Value>"Adobe Acrobat Reader DC"</Value>
+						<Operand>string</Operand>
+					  </ObjectCondition>
+					  <ObjectCondition IsTemplate="false">
+						<Object>package</Object>
+						<Field>type</Field>
+						<Comparer>=</Comparer>
+						<Value>package</Value>
+					  </ObjectCondition>
+					</Conditions>
+					<LogicalExpression>1 AND 2</LogicalExpression>
+				  </AutotagRules>
+				</Keyword>
+			  </Keywords>
+			</Category>
+			<Category SyntaxVersion="2" DataModelVersion="13">
+			  <Name>Adobe Reader DC required version</Name>
+			  <Type>package</Type>
+			  <Extra>
+				<MinPrivileges>ANONYMOUS</MinPrivileges>
+			  </Extra>
+			  <Keywords>
+				<Keyword>
+				  <Name>Current</Name>
+				  <Uid>d7e77a2d-0e22-4036-919a-41f8d7b7b8ca</Uid>
+				  <Rank>1</Rank>
+				  <Selector>select package where package.type = package AND package.name ~= "Adobe Acrobat Reader DC" AND package.version ~= "21.007"</Selector>
+				  <AutotagRules>
+					<Conditions>
+					  <ObjectCondition IsTemplate="false">
+						<Object>package</Object>
+						<Field>type</Field>
+						<Comparer>=</Comparer>
+						<Value>package</Value>
+					  </ObjectCondition>
+					  <ObjectCondition IsTemplate="false">
+						<Object>package</Object>
+						<Field>name</Field>
+						<Comparer>~=</Comparer>
+						<Value>"Adobe Acrobat Reader DC"</Value>
+						<Operand>string</Operand>
+					  </ObjectCondition>
+					  <ObjectCondition IsTemplate="false">
+						<Object>package</Object>
+						<Field>version</Field>
+						<Comparer>~=</Comparer>
+						<Value>"21.007"</Value>
+						<Operand>string</Operand>
+					  </ObjectCondition>
+					</Conditions>
+					<LogicalExpression>1 AND 2 AND 3</LogicalExpression>
+				  </AutotagRules>
+				</Keyword>
+				<Keyword>
+				  <Name>Other</Name>
+				  <Uid>3b224741-ecf2-434b-b481-7e038f8d136a</Uid>
+				  <Rank>2</Rank>
+				  <Selector>select package where package.type = package AND package.name ~= "Adobe Acrobat Reader DC"</Selector>
+				  <AutotagRules>
+					<Conditions>
+					  <ObjectCondition IsTemplate="false">
+						<Object>package</Object>
+						<Field>type</Field>
+						<Comparer>=</Comparer>
+						<Value>package</Value>
+					  </ObjectCondition>
+					  <ObjectCondition IsTemplate="false">
+						<Object>package</Object>
+						<Field>name</Field>
+						<Comparer>~=</Comparer>
+						<Value>"Adobe Acrobat Reader DC"</Value>
+						<Operand>string</Operand>
+					  </ObjectCondition>
+					</Conditions>
+					<LogicalExpression>1 AND 2</LogicalExpression>
+				  </AutotagRules>
+				</Keyword>
+			  </Keywords>
+			</Category>
+		  </Folder>
+		  <Folder Name="Google Chrome">
+			<Category SyntaxVersion="2" DataModelVersion="13">
+			  <Name>Chrome Versions</Name>
+			  <Type>package</Type>
+			  <Extra>
+				<MinPrivileges>ANONYMOUS</MinPrivileges>
+			  </Extra>
+			  <Keywords>
+				<Keyword>
+				  <Name>88.0.4324</Name>
+				  <Uid>5a76a354-f685-49f4-a659-b9dbdfbda837</Uid>
+				  <Rank>1</Rank>
+				  <Selector>select package where package.name = "Google Chrome" AND package.version ~= "88.0.4324"</Selector>
+				  <AutotagRules>
+					<Conditions>
+					  <ObjectCondition IsTemplate="false">
+						<Object>package</Object>
+						<Field>name</Field>
+						<Comparer>=</Comparer>
+						<Value>"Google Chrome"</Value>
+						<Operand>string</Operand>
+					  </ObjectCondition>
+					  <ObjectCondition IsTemplate="false">
+						<Object>package</Object>
+						<Field>version</Field>
+						<Comparer>~=</Comparer>
+						<Value>"88.0.4324"</Value>
+						<Operand>string</Operand>
+					  </ObjectCondition>
+					</Conditions>
+					<LogicalExpression>1 AND 2</LogicalExpression>
+				  </AutotagRules>
+				</Keyword>
+				<Keyword>
+				  <Name>89.0.4389</Name>
+				  <Uid>87546c40-b5f3-4619-a2d2-a20906593edb</Uid>
+				  <Rank>2</Rank>
+				  <Selector>select package where package.name = "Google Chrome" AND package.version ~= "89.0.4389"</Selector>
+				  <AutotagRules>
+					<Conditions>
+					  <ObjectCondition IsTemplate="false">
+						<Object>package</Object>
+						<Field>name</Field>
+						<Comparer>=</Comparer>
+						<Value>"Google Chrome"</Value>
+						<Operand>string</Operand>
+					  </ObjectCondition>
+					  <ObjectCondition IsTemplate="false">
+						<Object>package</Object>
+						<Field>version</Field>
+						<Comparer>~=</Comparer>
+						<Value>"89.0.4389"</Value>
+						<Operand>string</Operand>
+					  </ObjectCondition>
+					</Conditions>
+					<LogicalExpression>1 AND 2</LogicalExpression>
+				  </AutotagRules>
+				</Keyword>
+				<Keyword>
+				  <Name>90.0.4430</Name>
+				  <Uid>8b42d032-74ec-438e-ae79-c098c3389a62</Uid>
+				  <Rank>3</Rank>
+				  <Selector>select package where package.name = "Google Chrome" AND package.version ~= "90.0.4430"</Selector>
+				  <AutotagRules>
+					<Conditions>
+					  <ObjectCondition IsTemplate="false">
+						<Object>package</Object>
+						<Field>name</Field>
+						<Comparer>=</Comparer>
+						<Value>"Google Chrome"</Value>
+						<Operand>string</Operand>
+					  </ObjectCondition>
+					  <ObjectCondition IsTemplate="false">
+						<Object>package</Object>
+						<Field>version</Field>
+						<Comparer>~=</Comparer>
+						<Value>"90.0.4430"</Value>
+						<Operand>string</Operand>
+					  </ObjectCondition>
+					</Conditions>
+					<LogicalExpression>1 AND 2</LogicalExpression>
+				  </AutotagRules>
+				</Keyword>
+				<Keyword>
+				  <Name>91.0.4472</Name>
+				  <Uid>3a10c3e0-a9db-4add-9da5-3b5eab14b38c</Uid>
+				  <Rank>4</Rank>
+				  <Selector>select package where package.name = "Google Chrome" AND package.version ~= "91.0.4472"</Selector>
+				  <AutotagRules>
+					<Conditions>
+					  <ObjectCondition IsTemplate="false">
+						<Object>package</Object>
+						<Field>name</Field>
+						<Comparer>=</Comparer>
+						<Value>"Google Chrome"</Value>
+						<Operand>string</Operand>
+					  </ObjectCondition>
+					  <ObjectCondition IsTemplate="false">
+						<Object>package</Object>
+						<Field>version</Field>
+						<Comparer>~=</Comparer>
+						<Value>"91.0.4472"</Value>
+						<Operand>string</Operand>
+					  </ObjectCondition>
+					</Conditions>
+					<LogicalExpression>1 AND 2</LogicalExpression>
+				  </AutotagRules>
+				</Keyword>
+				<Keyword>
+				  <Name>Other</Name>
+				  <Uid>050a6e45-69be-4ffd-9dfb-6de0ea96e927</Uid>
+				  <Rank>5</Rank>
+				  <Selector>select package where package.name = "Google Chrome"</Selector>
+				  <AutotagRules>
+					<Conditions>
+					  <ObjectCondition IsTemplate="false">
+						<Object>package</Object>
+						<Field>name</Field>
+						<Comparer>=</Comparer>
+						<Value>"Google Chrome"</Value>
+						<Operand>string</Operand>
+					  </ObjectCondition>
+					</Conditions>
+					<LogicalExpression>1</LogicalExpression>
+				  </AutotagRules>
+				</Keyword>
+			  </Keywords>
+			</Category>
+			<Category SyntaxVersion="2" DataModelVersion="13">
+			  <Name>Chrome Required Versions</Name>
+			  <Type>package</Type>
+			  <Extra>
+				<MinPrivileges>ANONYMOUS</MinPrivileges>
+			  </Extra>
+			  <Keywords>
+				<Keyword>
+				  <Name>Current</Name>
+				  <Uid>3f5e3d6f-4b66-4ccf-821f-8b2cda20dbbc</Uid>
+				  <Rank>1</Rank>
+				  <Selector>select package where package.name = "Google Chrome" AND package.version ~= "96.0"</Selector>
+				  <AutotagRules>
+					<Conditions>
+					  <ObjectCondition IsTemplate="false">
+						<Object>package</Object>
+						<Field>name</Field>
+						<Comparer>=</Comparer>
+						<Value>"Google Chrome"</Value>
+						<Operand>string</Operand>
+					  </ObjectCondition>
+					  <ObjectCondition IsTemplate="false">
+						<Object>package</Object>
+						<Field>version</Field>
+						<Comparer>~=</Comparer>
+						<Value>"96.0"</Value>
+						<Operand>string</Operand>
+					  </ObjectCondition>
+					</Conditions>
+					<LogicalExpression>1 AND 2</LogicalExpression>
+				  </AutotagRules>
+				</Keyword>
+				<Keyword>
+				  <Name>Other</Name>
+				  <Uid>9fc308af-8311-4c4c-881b-0a8275a173da</Uid>
+				  <Rank>3</Rank>
+				  <Selector>select package where package.name = "Google Chrome"</Selector>
+				  <AutotagRules>
+					<Conditions>
+					  <ObjectCondition IsTemplate="false">
+						<Object>package</Object>
+						<Field>name</Field>
+						<Comparer>=</Comparer>
+						<Value>"Google Chrome"</Value>
+						<Operand>string</Operand>
+					  </ObjectCondition>
+					</Conditions>
+					<LogicalExpression>1</LogicalExpression>
+				  </AutotagRules>
+				</Keyword>
+			  </Keywords>
+			</Category>
+		  </Folder>
+		</Folder>
+		<Folder Name="Devices">
+		  <Category SyntaxVersion="2" DataModelVersion="13">
+			<Name>Days since last reboot</Name>
+			<Type>source</Type>
+			<Extra>
+			  <MinPrivileges>ANONYMOUS</MinPrivileges>
+			</Extra>
+			<Keywords>
+			  <Keyword>
+				<Name>a) 0-6</Name>
+				<Uid>50cbffef-b084-4df3-b9e0-fc03bad71e47</Uid>
+				<Rank>1</Rank>
+				<Selector>select source where source.days_since_last_boot &lt;= 7 AND source.days_since_last_time &lt;= 30</Selector>
+				<AutotagRules>
+				  <Conditions>
+					<ObjectCondition IsTemplate="false">
+					  <Object>source</Object>
+					  <Field>days_since_last_boot</Field>
+					  <Comparer>&lt;=</Comparer>
+					  <Value>7</Value>
+					  <Operand>integer</Operand>
+					</ObjectCondition>
+					<ObjectCondition IsTemplate="false">
+					  <Object>source</Object>
+					  <Field>days_since_last_time</Field>
+					  <Comparer>&lt;=</Comparer>
+					  <Value>30</Value>
+					  <Operand>integer</Operand>
+					</ObjectCondition>
+				  </Conditions>
+				  <LogicalExpression>1 AND 2</LogicalExpression>
+				</AutotagRules>
+			  </Keyword>
+			  <Keyword>
+				<Name>b) 7-10</Name>
+				<Uid>11e5854b-1413-440b-8420-299fde979377</Uid>
+				<Rank>2</Rank>
+				<Selector>select source where source.days_since_last_boot &lt;= 11 AND source.days_since_last_time &lt;= 30</Selector>
+				<AutotagRules>
+				  <Conditions>
+					<ObjectCondition IsTemplate="false">
+					  <Object>source</Object>
+					  <Field>days_since_last_boot</Field>
+					  <Comparer>&lt;=</Comparer>
+					  <Value>11</Value>
+					  <Operand>integer</Operand>
+					</ObjectCondition>
+					<ObjectCondition IsTemplate="false">
+					  <Object>source</Object>
+					  <Field>days_since_last_time</Field>
+					  <Comparer>&lt;=</Comparer>
+					  <Value>30</Value>
+					  <Operand>integer</Operand>
+					</ObjectCondition>
+				  </Conditions>
+				  <LogicalExpression>1 AND 2</LogicalExpression>
+				</AutotagRules>
+			  </Keyword>
+			  <Keyword>
+				<Name>c) 11-14</Name>
+				<Uid>009fe7ae-8edc-4b02-abf4-270d5f748d71</Uid>
+				<Rank>3</Rank>
+				<Selector>select source where source.days_since_last_boot &lt;= 15 AND source.days_since_last_time &lt;= 30</Selector>
+				<AutotagRules>
+				  <Conditions>
+					<ObjectCondition IsTemplate="false">
+					  <Object>source</Object>
+					  <Field>days_since_last_boot</Field>
+					  <Comparer>&lt;=</Comparer>
+					  <Value>15</Value>
+					  <Operand>integer</Operand>
+					</ObjectCondition>
+					<ObjectCondition IsTemplate="false">
+					  <Object>source</Object>
+					  <Field>days_since_last_time</Field>
+					  <Comparer>&lt;=</Comparer>
+					  <Value>30</Value>
+					  <Operand>integer</Operand>
+					</ObjectCondition>
+				  </Conditions>
+				  <LogicalExpression>1 AND 2</LogicalExpression>
+				</AutotagRules>
+			  </Keyword>
+			  <Keyword>
+				<Name>d) &gt;14</Name>
+				<Uid>bc47f39b-3a1c-4f1a-82c0-d7a8ded9e71e</Uid>
+				<Rank>4</Rank>
+				<Selector>select source where source.days_since_last_time &lt;= 30</Selector>
+				<AutotagRules>
+				  <Conditions>
+					<ObjectCondition IsTemplate="false">
+					  <Object>source</Object>
+					  <Field>days_since_last_time</Field>
+					  <Comparer>&lt;=</Comparer>
+					  <Value>30</Value>
+					  <Operand>integer</Operand>
+					</ObjectCondition>
+				  </Conditions>
+				  <LogicalExpression>1</LogicalExpression>
+				</AutotagRules>
+			  </Keyword>
+			</Keywords>
+		  </Category>
+		  <Category SyntaxVersion="2" DataModelVersion="13">
+			<Name>Days since last update</Name>
+			<Type>source</Type>
+			<Extra>
+			  <MinPrivileges>ANONYMOUS</MinPrivileges>
+			</Extra>
+			<Keywords>
+			  <Keyword>
+				<Name>a) 0-6</Name>
+				<Uid>387c92d8-7444-4d61-aab8-3970dc6786dc</Uid>
+				<Rank>1</Rank>
+				<Selector>select source where source.days_since_updates &lt;= 7 AND source.days_since_updates &lt;= 30</Selector>
+				<AutotagRules>
+				  <Conditions>
+					<ObjectCondition IsTemplate="false">
+					  <Object>source</Object>
+					  <Field>days_since_updates</Field>
+					  <Comparer>&lt;=</Comparer>
+					  <Value>7</Value>
+					  <Operand>integer</Operand>
+					</ObjectCondition>
+					<ObjectCondition IsTemplate="false">
+					  <Object>source</Object>
+					  <Field>days_since_updates</Field>
+					  <Comparer>&lt;=</Comparer>
+					  <Value>30</Value>
+					  <Operand>integer</Operand>
+					</ObjectCondition>
+				  </Conditions>
+				  <LogicalExpression>1 AND 2</LogicalExpression>
+				</AutotagRules>
+			  </Keyword>
+			  <Keyword>
+				<Name>d) &gt; 14</Name>
+				<Uid>b8094d07-f8f4-45f9-b49b-b118feb6227e</Uid>
+				<Rank>4</Rank>
+				<Selector>select source where source.days_since_last_time &lt;= 30</Selector>
+				<AutotagRules>
+				  <Conditions>
+					<ObjectCondition IsTemplate="false">
+					  <Object>source</Object>
+					  <Field>days_since_last_time</Field>
+					  <Comparer>&lt;=</Comparer>
+					  <Value>30</Value>
+					  <Operand>integer</Operand>
+					</ObjectCondition>
+				  </Conditions>
+				  <LogicalExpression>1</LogicalExpression>
+				</AutotagRules>
+			  </Keyword>
+			  <Keyword>
+				<Name>b) 7-10</Name>
+				<Uid>f57b22fa-9400-4fd1-aab9-cc6512db52fa</Uid>
+				<Rank>2</Rank>
+				<Selector>select source where source.days_since_updates &lt;= 11 AND source.days_since_updates &lt;= 30</Selector>
+				<AutotagRules>
+				  <Conditions>
+					<ObjectCondition IsTemplate="false">
+					  <Object>source</Object>
+					  <Field>days_since_updates</Field>
+					  <Comparer>&lt;=</Comparer>
+					  <Value>11</Value>
+					  <Operand>integer</Operand>
+					</ObjectCondition>
+					<ObjectCondition IsTemplate="false">
+					  <Object>source</Object>
+					  <Field>days_since_updates</Field>
+					  <Comparer>&lt;=</Comparer>
+					  <Value>30</Value>
+					  <Operand>integer</Operand>
+					</ObjectCondition>
+				  </Conditions>
+				  <LogicalExpression>1 AND 2</LogicalExpression>
+				</AutotagRules>
+			  </Keyword>
+			  <Keyword>
+				<Name>c) 11-14</Name>
+				<Uid>6ff9e5df-7727-4c0b-96fe-92da53fa58c2</Uid>
+				<Rank>3</Rank>
+				<Selector>select source where source.days_since_updates &lt;= 15 AND source.days_since_updates &lt;= 30</Selector>
+				<AutotagRules>
+				  <Conditions>
+					<ObjectCondition IsTemplate="false">
+					  <Object>source</Object>
+					  <Field>days_since_updates</Field>
+					  <Comparer>&lt;=</Comparer>
+					  <Value>15</Value>
+					  <Operand>integer</Operand>
+					</ObjectCondition>
+					<ObjectCondition IsTemplate="false">
+					  <Object>source</Object>
+					  <Field>days_since_updates</Field>
+					  <Comparer>&lt;=</Comparer>
+					  <Value>30</Value>
+					  <Operand>integer</Operand>
+					</ObjectCondition>
+				  </Conditions>
+				  <LogicalExpression>1 AND 2</LogicalExpression>
+				</AutotagRules>
+			  </Keyword>
+			</Keywords>
+		  </Category>
+		</Folder>
+	  </Folder>
+	  </CategoryTree>
+  </Content>
+ </Contents>
+</Pack>

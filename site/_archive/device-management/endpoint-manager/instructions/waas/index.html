@@ -1,0 +1,1763 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.11">
+    
+    
+      
+        <title>Windows As A Service - Workspace Learning Track</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.50e68009.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#02a6f2">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:300,400,400i,700%7CUbuntu+Mono&display=fallback">
+        <style>:root{--md-text-font:"Ubuntu Mono";--md-code-font:"Ubuntu Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="sogeti" data-md-color-primary="light-blue" data-md-color-accent="blue">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#windows_as_a_service" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="Workspace Learning Track" class="md-header__button md-logo" aria-label="Workspace Learning Track" data-md-component="logo">
+      
+  <img src="../../../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Workspace Learning Track
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Windows As A Service
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/evdplassgti/Workspace/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../home/welcome/" class="md-tabs__link">
+        Home
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../certification/" class="md-tabs__link">
+        Certification
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../technologies/defender/" class="md-tabs__link">
+        Technologies
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../lab/" class="md-tabs__link">
+        Lab
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../remote-workspace/index.md" class="md-tabs__link">
+        Additional
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="Workspace Learning Track" class="md-nav__button md-logo" aria-label="Workspace Learning Track" data-md-component="logo">
+      
+  <img src="../../../../../assets/logo.png" alt="logo">
+
+    </a>
+    Workspace Learning Track
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/evdplassgti/Workspace/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" data-md-state="indeterminate" type="checkbox" id="__nav_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          Home
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Home" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Home
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../home/welcome/" class="md-nav__link">
+        Welcome
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../home/introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../home/overview/" class="md-nav__link">
+        Overview Track
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../home/timeline/" class="md-nav__link">
+        Timeline
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../home/downloads/ssw-downloads.md" class="md-nav__link">
+        Downloads
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Certification
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Certification" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Certification
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../certification/" class="md-nav__link">
+        Workspace certification
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" data-md-state="indeterminate" type="checkbox" id="__nav_2_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          Cloud Fundamentals
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cloud Fundamentals" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Cloud Fundamentals
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../certification/ms-900/" class="md-nav__link">
+        Introduction to MS-900
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../certification/ms-900/" class="md-nav__link">
+        Certification resources
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_3" data-md-state="indeterminate" type="checkbox" id="__nav_2_2_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_3">
+          Chapter 1 [text]
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 1 [text]" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 1 [text]
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../certification/ms-900/chapter1/" class="md-nav__link">
+        [text something #1]
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../certification/ms-900/chapter1/" class="md-nav__link">
+        [text something #2]
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_4" data-md-state="indeterminate" type="checkbox" id="__nav_2_2_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_4">
+          Chapter 2 [text]
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 2 [text]" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 2 [text]
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../certification/ms-900/chapter1/" class="md-nav__link">
+        [text something #1]
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../certification/ms-900/chapter1/" class="md-nav__link">
+        [text something #2]
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_5" data-md-state="indeterminate" type="checkbox" id="__nav_2_2_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_5">
+          Chapter 3 [text]
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 3 [text]" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 3 [text]
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../certification/ms-900/chapter1/" class="md-nav__link">
+        [text something #1]
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../certification/ms-900/chapter1/" class="md-nav__link">
+        [text something #2]
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_6" data-md-state="indeterminate" type="checkbox" id="__nav_2_2_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_6">
+          Chapter 4 [text]
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 4 [text]" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 4 [text]
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../certification/ms-900/chapter1/" class="md-nav__link">
+        [text something #1]
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../certification/ms-900/chapter1/" class="md-nav__link">
+        [text something #2]
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" data-md-state="indeterminate" type="checkbox" id="__nav_2_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          Security Fundamentals
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Security Fundamentals" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Security Fundamentals
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../certification/sc-900/" class="md-nav__link">
+        Introduction to SC-900
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../certification/sc-900/" class="md-nav__link">
+        Certification resources
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_3" data-md-state="indeterminate" type="checkbox" id="__nav_2_3_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_3">
+          Chapter 1 [text]
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 1 [text]" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 1 [text]
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../certification/sc-900/chapter1/" class="md-nav__link">
+        [text something #1]
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../certification/sc-900/chapter1/" class="md-nav__link">
+        [text something #2]
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_4" data-md-state="indeterminate" type="checkbox" id="__nav_2_3_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_4">
+          Chapter 2 [text]
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 2 [text]" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 2 [text]
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../certification/sc-900/chapter1/" class="md-nav__link">
+        [text something #1]
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../certification/sc-900/chapter1/" class="md-nav__link">
+        [text something #2]
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_5" data-md-state="indeterminate" type="checkbox" id="__nav_2_3_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_5">
+          Chapter 3 [text]
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 3 [text]" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 3 [text]
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../certification/sc-900/chapter1/" class="md-nav__link">
+        [text something #1]
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../certification/sc-900/chapter1/" class="md-nav__link">
+        [text something #2]
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_6" data-md-state="indeterminate" type="checkbox" id="__nav_2_3_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_6">
+          Chapter 4 [text]
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 4 [text]" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 4 [text]
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../certification/sc-900/chapter1/" class="md-nav__link">
+        [text something #1]
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../certification/sc-900/chapter1/" class="md-nav__link">
+        [text something #2]
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Technologies
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Technologies" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Technologies
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../technologies/defender/" class="md-nav__link">
+        Defender for 365
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../technologies/exo/" class="md-nav__link">
+        Exchange Online
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../technologies/sp/" class="md-nav__link">
+        SharePoint Online
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../technologies/onedrive/" class="md-nav__link">
+        OneDrive for Business
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../technologies/teams/" class="md-nav__link">
+        Microsoft Teams
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../technologies/ca/" class="md-nav__link">
+        Conditional Access
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../technologies/powershell/" class="md-nav__link">
+        PowerShell
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Lab
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lab" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Lab
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../lab/" class="md-nav__link">
+        Introduction labs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" data-md-state="indeterminate" type="checkbox" id="__nav_4_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2">
+          SC-900
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="SC-900" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          SC-900
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../lab/sc-900/" class="md-nav__link">
+        Lab 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../lab/sc-900/" class="md-nav__link">
+        Lab 2
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" data-md-state="indeterminate" type="checkbox" id="__nav_4_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3">
+          MD-100
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="MD-100" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          MD-100
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../lab/md-100/" class="md-nav__link">
+        Lab 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../lab/md-100/" class="md-nav__link">
+        Lab 2
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" data-md-state="indeterminate" type="checkbox" id="__nav_4_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4">
+          MD-101
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="MD-101" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          MD-101
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../lab/md-101/" class="md-nav__link">
+        Lab 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../lab/md-101/" class="md-nav__link">
+        Lab 2
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" data-md-state="indeterminate" type="checkbox" id="__nav_4_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5">
+          MS-100
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="MS-100" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          MS-100
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../lab/ms-100/" class="md-nav__link">
+        Lab 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../lab/ms-100/" class="md-nav__link">
+        Lab 2
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6" data-md-state="indeterminate" type="checkbox" id="__nav_4_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_6">
+          MS-101
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="MS-101" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          MS-101
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../lab/ms-101/" class="md-nav__link">
+        Lab 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../lab/ms-101/" class="md-nav__link">
+        Lab 2
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" data-md-state="indeterminate" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Additional
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Additional" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Additional
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../remote-workspace/index.md" class="md-nav__link">
+        Additional Workspace information
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quality_and_feature_updates" class="md-nav__link">
+    Quality and Feature updates
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windows_11" class="md-nav__link">
+    Windows 11
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment_of_updates" class="md-nav__link">
+    Deployment of updates
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+<a href="https://github.com/docs/_archive/device-management/endpoint-manager/instructions/waas.md" title="Edit this page" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+<h1 id="windows_as_a_service">Windows As A Service<a class="headerlink" href="#windows_as_a_service" title="Permanent link">&para;</a></h1>
+<h2 id="quality_and_feature_updates">Quality and Feature updates<a class="headerlink" href="#quality_and_feature_updates" title="Permanent link">&para;</a></h2>
+<p>With the release of Windows 10, Microsoft introduced a new strategy to update and upgrade the operating system during its lifecycle. Before Windows 10, security updates and fixes where offered as separate update packages from which IT Admins could choose which of them were deployed and which were not. Additionally, when devices were not updated for a longer period, for instance when newly deployed from an outdated custom image, a long list of Windows updates must be additionally installed and sometimes with several reboots in between. Windows 1o introduced Quality updates which are inclusive and cumulative, meaning only one update package per month, without options to skip one or more fixes, and the latest Quality update package includes all previous updates (when still relevant). This strategy has the following important advantages:</p>
+<ul>
+<li>All devices with the same patch level are equally configured. This minimizes the risk for issues caused by missing updates or devices configured differently.</li>
+<li>For IT admins and end-users, the strategy is more simple and less time consuming, having to install only one single update package to update the OS with the latest fixes and security updates.</li>
+</ul>
+<p>Next to patches or fixes that improve Windows 10 quality, Microsoft also releases so called 'Feature Updates'. These upgrades contain functional improvements and new features that previous would be offered through a new Windows version or Service Pack (Windows XP -&gt; Windows XP SP1 -&gt; Windows XP SP2 -&gt; Windows Vista -&gt; Windows 7 -&gt; Windows 8). Contrary to the approach for previous Windows versions, Feature updates are released more frequently (2 times a year instead of once per 3 or 4 years) and are typically smaller in size. Users can benefit from improvements and new features earlier while the impact and change is smaller then before. Implementation of Feature Updates therefore is quicker and easier to adopt. Note that from the beginning of Feature Update 21H2, feature updates are released annually instead of semi-annual, in the second half of the calendar year. After release, the feature update is supported for 18 months (Pro) or 30 months (Enterprise).</p>
+<p>With the update and upgrade strategy for Windows 10, updates are more frequent and smaller in size (Feature update) and using cumulative Quality updates, easier to deploy. Both contribute to stability and adoption of improvements and new features. Just what you can expect from a service, hence Windows as a Service.</p>
+<h2 id="windows_11">Windows 11<a class="headerlink" href="#windows_11" title="Permanent link">&para;</a></h2>
+<p>With the release of Windows 10, Microsoft announced there would be no new Windows version released in the future. This 'promise' is not kept as Microsoft released Windows 11 in the fall of 2021. The update strategy for Windows 11 is similar to what we now have for Windows 10: monthly Quality updates and one, single Feature update in the second half of the calendar year. However, the feature update is supported for 24 months (Pro) or 36 months (Enterprise). The upgrade path from Windows 10 to Windows 11 is very much like a feature update for Windows 10 (inplace upgrade), both in user experience as technical approach. Windows 10 is maintained side by side with Windows 11 and is supported till the end of 2025.  </p>
+<h2 id="deployment_of_updates">Deployment of updates<a class="headerlink" href="#deployment_of_updates" title="Permanent link">&para;</a></h2>
+<p>Sogeti Smart Workspace makes use of Windows Update for Business. Updates are downloaded using the Windows Update Service over the internet at the time of release and automatically installed on end user devices. Before an update is released for production by Microsoft, the update is tested thoroughly by Microsoft internally and the Windows Insider community. Feedback and experiences are used to improve the quality and stability before updates are general available. Customers can choose between the following update channels that differ in release moment and support terms. The choice for an update channel is per device and set once so subsequent updates are offered from the selected channel. At this moment in time, the following channels exist, for both Windows 10 and Windows 11:</p>
+<p><strong>Insider channel</strong>. Windows 10 devices ontvangen pre-releases van nieuwe Windows 10 builds. Issues en feedback kunnen daarmee vroegtijdig worden opgemerkt en verzameld met als doel de uiteindelijke productie versie te verbeteren. Het insider channel is primair bedoeld voor test omgevingen, niet voor productie. Zogenaamde early adopters kunnen ervoor kiezen hun device met deze versie in te (laten) richten maar dan voor niet kritische systemen met geen of geringe impact op de bedrijfsvoering wanneer er iets fout gaat. Dit channel ontvangt in de regel frequenter (vaker dan 2 keer per jaar) nieuwe releases.</p>
+<p><strong>Semi-annual channel</strong>. Devices in dit channel ontvangen updates wanneer ze door Microsoft als productie rijpe versie worden vrijgegeven, normaliter tweemaal per jaar. Veruit de meeste computers zullen geconfigureerd worden om gebruik te maken van dit channel.</p>
+<p>•   Long Term service release. Dit channel is bedoelt voor bedrijfskritische systemen met een grote impact op de bedrijfsvoering wanneer een upgrade issues veroorzaakt. Voor deze versie worden geen Feature Upgrades uitgegeven maar wel de maandelijkse Quality updates. Eens in de twee tot drie jaar verschijnt een nieuwe versie voor dit channel die met een in-place upgrade kan worden doorgevoerd.  Deze versie heeft tot 10 jaar ondersteuning van Microsoft. Het lijkt aantrekkelijk om deze release te gebruiken omdat er minder (grote) wijzigingen worden aangeboden. Sogeti adviseert in de Smart Workspace oplossing terughoudend te zijn met deze keuze omdat die vernieuwing tegen gaat. Daarnaast biedt deze versie minder functionaliteit, bijvoorbeeld door het ontbreken van ondersteuning van applicaties uit de Microsoft Store (de zogenaamde modern apps). </p>
+<p>Om de impact voor de organisatie te verkleinen, wordt de installatie van updates binnen de organisatie gespreid doorgevoerd. Dat geschiedt met zogenaamde Update Rings. Een Update Ring is een verzameling devices waarvoor naast het service channel het moment en gedrag voor installatie is geconfigureerd. Standaard worden meerdere Update Rings gedefinieerd om zo de installatie van Quality Updates en Feature Upgrades te kunnen spreiden. De eigenschappen voor deze update rings zijn binnen Smart Workspace gelijk, met uitzondering van het moment van installatie. 
+Binnen Windows Update for Buisness kan ervoor worden gekozen om het moment van installatie na release uit te stellen, dit wordt ‘deferal’ genoemd. Hoewel het mogelijk is om ook de installatie van Quality Updates uit te stellen, wordt dit binnen Smart Workspace in geen van de update rings toegepast. De praktijk leert dat issues met Quality Updates uitzonderlijk zijn. De verwachtte schade door uitstel van een update, door een vulnerability, schatten we groter in dan die veroorzaakt door issues met de update zelf. 
+De volgende drie update rings worden geconfigureerd, allen gebruik makend van het Semi-Annual Channel voor Windows Updates:</p>
+<p>•   Pilot : Computers in deze update ring krijgen zowel Quality als Feature Updates direct na release aangeboden door de deferal voor beiden op 0 dagen in te stellen.
+•   Test : Computers in deze update ring krijgen Quality Updates direct na release en Feature Updates 15 dagen na release. Dit geeft de organisatie 15 dagen de tijd om eerst in de pilot groep te testen.
+•   Productie : Computers in deze update ring krijgen Quality Updates direct na release en Feature Updates 30 dagen na release. Dit geeft de organisatie 30 dagen de tijd om eerst in de pilot groep te testen, waarvan de laatste 15 dagen tevens in de test groep.</p>
+<p>Wanneer het fout gaat
+In uitzonderlijke gevallen kan het voorkomen dat er issues optreden bij het doorvoeren van updates. Dat zien we dan met name bij Feature Updates. Op dat moment kan aanvullend worden ingegrepen door de installatie van Quality Updates of Feature Updates te pauzeren. Deze pauzering is niet afhankelijk van de deferal en treedt in nadat de computer de pauze instelling heeft ontvangen. De pauzering wordt automatisch na 35 dagen opgeheven, maar kan zowel worden verlengd als eerder worden opgeheven. De pauzering van updates wordt per update ring afzonderlijk geactiveerd of opgeheven.</p>
+<p>Optimalisatie van de download
+Afhankelijk van het type van de update, Quality Updates of Feature Updates, kan de grootte van de updates oplopen van enkele megabytes tot gigabytes. Om bandbreedte gebruik te verminderen, beschikt Windows 10 over mogelijkheden om de download te optimaliseren, de Delivery Optimization service. Het is nog steeds nodig dat er verbinding is met het internet, maar reeds gedownloade updates zijn via een lokale cache op het device beschikbaar voor andere computers in het netwerk. Het is dan niet nodig dat iedere computer de updates afzonderlijk gaat downloaden. Eigenschappen van deze cache en beschikbare bandbreedte wordt centraal in Smart Workspace geconfigureerd, afhankelijk van het netwerk bij de klant en in overeenstemming met de netwerk specialisten van de klant. Naast Windows Updates, maken ook de applicatie installatie van applicaties via Microsoft Endpoint Manager (Intune) en het automatisch update mechanisme van Office 365 applicaties gebruik van Delivery Optimization.</p>
+<p>Aanvullende updates
+Naast updates voor het Windows 10 operating system, kan worden geconfigureerd dat ook updates van drivers en andere Microsoft toepassingen worden aangeboden. In de standaard Smart Workspace configuratie worden beide opties geactiveerd.</p>
+<p>Updates voor Edge (Chromium) en Office 365 Apps
+Zowel de nieuwe, modern versie van Edge als de Office 365 apps maken, net als Windows 10, gebruik van verschillende update channels waarin verschillende versies worden aangeboden. Hoewel de Office 365 apps strikt genomen geen onderdeel uitmaken van het operating systeem, zijn ze normaal gesproken opgenomen in de standaard werkplek. Omdat ook het update mechanisme sterk overeenkomt met die van Windows 10, worden ze in dit informatieblad beschreven. De lifecycle voor overige applicaties is beschreven in het informatieblad ‘Application Lifecycle’.</p>
+<p>Voor Edge bestaan de volgende channels:
+Channel Toepassing  Update frequentie
+Stable  Generiek gebruik / productie (SSW standaard)    Eens per 6 weken
+Beta    Pre-release om te testen binnen de organisatie  Eens per 6 weken
+Dev Voor planning en ontwikkeling, met name wanneer in-house web applicaties worden gebouwd en onderhouden. Deze versie biedt geen support. Wekelijks
+Canary  Experimenteel, niet geteste of ondersteunde versie  Dagelijks</p>
+<p>Het update channel wordt ingesteld bij de installatie van Edge, in Smart Workspace door middel van een installatie package in Endpoint Manager (Intune). De standaard voor generieke gebruikers is de Stable release. Na installatie wordt Edge automatisch bijgewerkt. Daarvoor is geen configuratie of actie nodig. Wanneer naast het Stable channel ook andere channels worden gebruikt, dan zijn daarvoor aanvullende packages in Intune nodig. De groepen in de update rings kunnen gebruikt worden voor verschillende versies van Edge, bijvoorbeeld het aanbieden van de Beta release aan de pilot en evt test gebruikers. Gebruik van Dev of Canary raden we af voor gebruik in productie omdat dit vroege versies betreft die Microsoft ook niet ondersteund. De Dev versie kan eventueel wel worden toegepast voor (web-)ontwikkelaars.</p>
+<p>Voor Office 365 bestaan de volgende channels:
+Channel Toepassing  Update frequentie
+Current Channel Gebruik van nieuwe Office features, op het moment dat ze beschikbaar komen  Minimaal eens per maand, in de praktijk meerder keren per maand
+Monthly Channel Eens per maand voorzien van nieuwe Office features op een voorspelbaar moment (patch Tuesday)   Eens per maand, op de tweede dinsdag van de maand
+Semi-Annual Enterprise Channel  Voor Enterprise organisaties waar een verstoring of wijziging van Office een grote impact kan hebben (SSW standaard)    Security en nodige updates eens per maand, op de tweede dinsdag van de maand. Nieuwe features worden twee keer per jaar aangeboden.</p>
+<p>De keuze voor het update channel is sterk afhankelijk van de organisatie en het gebruik van Office 365 binnen de organisatie. Security updates en fixes worden voor alle versies maandelijks uitgebracht en toegepast. De keuze voor een channel heeft met name impact op de beschikbare features / nieuwe functionaliteit. 
+Wanneer gebruikers zo snel mogelijk van nieuwe features gebruik willen maken, dan is het Current Channel de beste keuze. Voor meer voorspelbaarheid en stabiliteit kan beter gekozen worden voor het Monthly Enterprise channel. Tot slot, het Semi-Annual channel biedt de beste mogelijkheid om nieuwe versies eerst goed te testen voor ze breed beschikbaar worden gesteld binnen de organisatie. Omdat dit de meest ‘veilige’ optie is, is dit de standaard keuze in Smart Workspace. De best passende keuze wordt altijd in overeenstemming met de organisatie gemaakt.</p>
+<p>Het gebruikte update channel wordt bij de installatie van Office ingesteld. Wijziging is mogelijk maar vereist een herinstallatie / configuratie van Office, mogelijk gecombineerd met een downgrade - wanneer het update channel naar van Current of Monthly naar resp. Monthly of Semi-Annual wordt aangepast - of een upgrade wanneer de omgekeerde weg wordt behandeld. </p>
+<p>Worden alle drie de channels binnen de organisatie gebruikt, dan zijn ook drie installatie packages voor Office benodigd. Deze worden in Microsoft Endpoint Manager (Intune) geconfigureerd maar vereisen geen afzonderlijke packaging activiteiten. Voor deployment kunnen dezelde groepen worden gebruikt die voor de spreiding van Windows Updates worden gebruikt. Wordt gebruik gemaakt van het applicatie portaal van Smart Workspace, dan kan een optie worden aangeboden om gebruikers op een gecontroleerde wijze te laten omschakelen naar een ander update channel. Let er dan wel op dat de controle over ‘Wie heeft Wat’ dan lastiger wordt.</p>
+<p>Gebruikers ervaring
+Windows zal automatisch controleren of er updates beschikbaar zijn. Dat gebeurt bij het opstarten en daarna periodiek. Wanneer updates beschikbaar zijn – dat is afhankelijk van de instellingen voor uitstel van updates – dan worden deze op de achtergrond automatisch gedownload en geinstalleerd. De gebruiker hoeft hierop geen actie op te ondernemen en het update proces gebruikt de laagste prioriteit om de productiviteit zo min mogelijk te beinvloeden.</p>
+<p>Wanneer de updates zijn geinstalleerd, krijgt de gebruiker een popup waarin wordt gemeld dat er updates beschikbaar zijn en de vraag om de computer te herstarten om de updates te verwerken. Omdat dit niet perse een geschikt moment hoeft te zijn, heeft de gebruiker de mogelijkheid om de herstart uit te stellen, in de Smart Workspace configuratie tot maximaal 7 dagen. De gebruiker kan ook een moment kiezen waarop de computer automatisch opnieuw start om de update af te ronden. Wanneer de gebruiker de computer in deze periode niet heeft herstart, dan zal de computer automatisch worden opgestart. De gebruiker krijgt hierover een melding. Deze functionaliteit wordt ‘Engaged Restart’ genoemd.</p>
+<p>Bij het afsluiten en opnieuw starten van de computer worden de updates daadwerkelijk toegepast. In de regel duurt dit enkele minuten voor Quality Updates. Het verwerkenvan de Feature Update, na download en pre-installatie, duurt in de regel 15-30 minuten. Met name voor de laatste is dat sterk afhankelijk van de leeftijd en aard van de computer.</p>
+<p>Het bijwerken van zowel Office als Edge heeft geen merkbare impact voor de gebruiker. Beiden worden automatisch en op de achtergrond bijgewerkt. Met name bij het gebruik van het Current Channel voor de Office 365 apps kan dit tot gevolg hebben dat gebruikers nieuwe features als ‘plotselinge’ wijzigingen ervaren. Goede communicatie en adoptie is daarom noodzakelijk.</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; Sogeti
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/sogeti_nl" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://www.sogeti.nl/" target="_blank" rel="noopener" title="www.sogeti.nl" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M172.5 131.1c55.6-55.59 148-55.59 203.6 0 50 50 57.4 129.7 16.3 187.2l-1.1 1.6c-10.3 14.3-30.3 17.7-44.6 7.4-14.4-10.3-17.8-30.3-7.5-44.6l1.1-1.6c22.9-32.1 19.3-76-8.6-103.9-31.4-31.4-82.5-31.4-114 0L105.5 289.5c-31.51 30.6-31.51 82.5 0 114 27.8 27.9 71.8 31.5 103.8 8.6l1.6-2c14.4-9.4 34.4-6.1 44.6 8.3 10.3 14.4 7 34.4-7.4 44.7l-1.6 1.1c-58.4 41.1-136.3 34.5-186.29-15.4-56.469-56.5-56.469-148.1 0-204.5L172.5 131.1zm295 248.9c-56.5 56.5-148 56.5-204.5 0-50-50-56.5-128.8-15.4-186.3l1.1-1.6c9.4-14.3 29.4-17.7 44.6-7.4 14.4 9.4 17.8 29.4 7.5 44.6l-1.1 1.6c-22.9 31.2-19.3 76 8.6 103.9 31.4 31.4 82.5 31.4 114 0l112.2-112.3c31.5-31.5 31.5-83.4 0-114-27.8-27.87-71.8-31.51-103.8-8.6l-1.6 1.1c-14.4 10.3-34.4 6.1-44.6-7.42-10.3-14.38-7-34.37 7.4-44.64l1.6-1.12C451 6.731 529.8 13.25 579.8 63.24c56.5 56.46 56.5 148.06 0 204.46L467.5 380z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.instant", "navigation.expand", "search.share"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../../assets/javascripts/workers/search.092fa1f6.min.js"}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.5a9542cf.min.js"></script>
+      
+    
+  </body>
+</html>

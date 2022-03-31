@@ -1,0 +1,1912 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.11">
+    
+    
+      
+        <title>Windows Device Reset - Workspace Learning Track</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.50e68009.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#02a6f2">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:300,400,400i,700%7CUbuntu+Mono&display=fallback">
+        <style>:root{--md-text-font:"Ubuntu Mono";--md-code-font:"Ubuntu Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="sogeti" data-md-color-primary="light-blue" data-md-color-accent="blue">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#windows_device_reset" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="Workspace Learning Track" class="md-header__button md-logo" aria-label="Workspace Learning Track" data-md-component="logo">
+      
+  <img src="../../../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Workspace Learning Track
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Windows Device Reset
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/evdplassgti/Workspace/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../home/welcome/" class="md-tabs__link">
+        Home
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../certification/" class="md-tabs__link">
+        Certification
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../technologies/defender/" class="md-tabs__link">
+        Technologies
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../lab/" class="md-tabs__link">
+        Lab
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../remote-workspace/index.md" class="md-tabs__link">
+        Additional
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="Workspace Learning Track" class="md-nav__button md-logo" aria-label="Workspace Learning Track" data-md-component="logo">
+      
+  <img src="../../../../../assets/logo.png" alt="logo">
+
+    </a>
+    Workspace Learning Track
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/evdplassgti/Workspace/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" data-md-state="indeterminate" type="checkbox" id="__nav_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          Home
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Home" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Home
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../home/welcome/" class="md-nav__link">
+        Welcome
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../home/introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../home/overview/" class="md-nav__link">
+        Overview Track
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../home/timeline/" class="md-nav__link">
+        Timeline
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../home/downloads/ssw-downloads.md" class="md-nav__link">
+        Downloads
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Certification
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Certification" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Certification
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../certification/" class="md-nav__link">
+        Workspace certification
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" data-md-state="indeterminate" type="checkbox" id="__nav_2_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          Cloud Fundamentals
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cloud Fundamentals" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Cloud Fundamentals
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../certification/ms-900/" class="md-nav__link">
+        Introduction to MS-900
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../certification/ms-900/" class="md-nav__link">
+        Certification resources
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_3" data-md-state="indeterminate" type="checkbox" id="__nav_2_2_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_3">
+          Chapter 1 [text]
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 1 [text]" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 1 [text]
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../certification/ms-900/chapter1/" class="md-nav__link">
+        [text something #1]
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../certification/ms-900/chapter1/" class="md-nav__link">
+        [text something #2]
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_4" data-md-state="indeterminate" type="checkbox" id="__nav_2_2_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_4">
+          Chapter 2 [text]
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 2 [text]" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 2 [text]
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../certification/ms-900/chapter1/" class="md-nav__link">
+        [text something #1]
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../certification/ms-900/chapter1/" class="md-nav__link">
+        [text something #2]
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_5" data-md-state="indeterminate" type="checkbox" id="__nav_2_2_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_5">
+          Chapter 3 [text]
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 3 [text]" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 3 [text]
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../certification/ms-900/chapter1/" class="md-nav__link">
+        [text something #1]
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../certification/ms-900/chapter1/" class="md-nav__link">
+        [text something #2]
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_6" data-md-state="indeterminate" type="checkbox" id="__nav_2_2_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_6">
+          Chapter 4 [text]
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 4 [text]" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 4 [text]
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../certification/ms-900/chapter1/" class="md-nav__link">
+        [text something #1]
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../certification/ms-900/chapter1/" class="md-nav__link">
+        [text something #2]
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" data-md-state="indeterminate" type="checkbox" id="__nav_2_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          Security Fundamentals
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Security Fundamentals" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Security Fundamentals
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../certification/sc-900/" class="md-nav__link">
+        Introduction to SC-900
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../certification/sc-900/" class="md-nav__link">
+        Certification resources
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_3" data-md-state="indeterminate" type="checkbox" id="__nav_2_3_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_3">
+          Chapter 1 [text]
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 1 [text]" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 1 [text]
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../certification/sc-900/chapter1/" class="md-nav__link">
+        [text something #1]
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../certification/sc-900/chapter1/" class="md-nav__link">
+        [text something #2]
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_4" data-md-state="indeterminate" type="checkbox" id="__nav_2_3_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_4">
+          Chapter 2 [text]
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 2 [text]" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 2 [text]
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../certification/sc-900/chapter1/" class="md-nav__link">
+        [text something #1]
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../certification/sc-900/chapter1/" class="md-nav__link">
+        [text something #2]
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_5" data-md-state="indeterminate" type="checkbox" id="__nav_2_3_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_5">
+          Chapter 3 [text]
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 3 [text]" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 3 [text]
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../certification/sc-900/chapter1/" class="md-nav__link">
+        [text something #1]
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../certification/sc-900/chapter1/" class="md-nav__link">
+        [text something #2]
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_6" data-md-state="indeterminate" type="checkbox" id="__nav_2_3_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_6">
+          Chapter 4 [text]
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 4 [text]" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 4 [text]
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../certification/sc-900/chapter1/" class="md-nav__link">
+        [text something #1]
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../certification/sc-900/chapter1/" class="md-nav__link">
+        [text something #2]
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Technologies
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Technologies" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Technologies
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../technologies/defender/" class="md-nav__link">
+        Defender for 365
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../technologies/exo/" class="md-nav__link">
+        Exchange Online
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../technologies/sp/" class="md-nav__link">
+        SharePoint Online
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../technologies/onedrive/" class="md-nav__link">
+        OneDrive for Business
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../technologies/teams/" class="md-nav__link">
+        Microsoft Teams
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../technologies/ca/" class="md-nav__link">
+        Conditional Access
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../technologies/powershell/" class="md-nav__link">
+        PowerShell
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Lab
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lab" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Lab
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../lab/" class="md-nav__link">
+        Introduction labs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" data-md-state="indeterminate" type="checkbox" id="__nav_4_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2">
+          SC-900
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="SC-900" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          SC-900
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../lab/sc-900/" class="md-nav__link">
+        Lab 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../lab/sc-900/" class="md-nav__link">
+        Lab 2
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" data-md-state="indeterminate" type="checkbox" id="__nav_4_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3">
+          MD-100
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="MD-100" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          MD-100
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../lab/md-100/" class="md-nav__link">
+        Lab 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../lab/md-100/" class="md-nav__link">
+        Lab 2
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" data-md-state="indeterminate" type="checkbox" id="__nav_4_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4">
+          MD-101
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="MD-101" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          MD-101
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../lab/md-101/" class="md-nav__link">
+        Lab 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../lab/md-101/" class="md-nav__link">
+        Lab 2
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" data-md-state="indeterminate" type="checkbox" id="__nav_4_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5">
+          MS-100
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="MS-100" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          MS-100
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../lab/ms-100/" class="md-nav__link">
+        Lab 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../lab/ms-100/" class="md-nav__link">
+        Lab 2
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6" data-md-state="indeterminate" type="checkbox" id="__nav_4_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_6">
+          MS-101
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="MS-101" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          MS-101
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../lab/ms-101/" class="md-nav__link">
+        Lab 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../lab/ms-101/" class="md-nav__link">
+        Lab 2
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" data-md-state="indeterminate" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Additional
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Additional" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Additional
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../remote-workspace/index.md" class="md-nav__link">
+        Additional Workspace information
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#managed_reset" class="md-nav__link">
+    Managed Reset
+  </a>
+  
+    <nav class="md-nav" aria-label="Managed Reset">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wipe_the_device" class="md-nav__link">
+    Wipe the device
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fresh_start" class="md-nav__link">
+    Fresh Start
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autopilot_reset" class="md-nav__link">
+    Autopilot Reset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user_initiated_reset_self-service" class="md-nav__link">
+    User initiated reset (self-service)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#local_reset" class="md-nav__link">
+    Local Reset
+  </a>
+  
+    <nav class="md-nav" aria-label="Local Reset">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reset_from_the_settings_app_in_windows_10" class="md-nav__link">
+    Reset from the Settings App in Windows 10
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reset_from_the_login_screen" class="md-nav__link">
+    Reset from the login screen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autopilot_reset_from_login_screen" class="md-nav__link">
+    Autopilot reset from login screen
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retire_and_delete_devices" class="md-nav__link">
+    Retire and delete devices
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix_device_registrations_in_azure_ad_and_intune" class="md-nav__link">
+    Appendix: Device registrations in Azure AD and Intune
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+<a href="https://github.com/docs/_archive/device-management/endpoint-manager/instructions/windows-dev-reset.md" title="Edit this page" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+<h1 id="windows_device_reset">Windows Device Reset<a class="headerlink" href="#windows_device_reset" title="Permanent link">&para;</a></h1>
+<p>During the lifecycle of Windows devices, users may run into issues where the operating system or application(s) do not function as expected. Or the device is handed over to another user who wants to start with a freshly installed device. In these circumstances, a reset of Windows 10 might be the only, or a time saving solution. Out of the box, Windows 10 offers the ability to reset the PC to a fresh state, optionally keeping personal files. This option can be chosen from the Windows 10 Recovery menu in the Settings App. However, users need administrator permissions to reset their device and off course, the ability to login to the device is required. In Smart Workspace, where devices are managed with Endpoint Manager (Intune), additional options are available to reset a device. A reset can be triggered by IT admins but also users can initiate a device reset. This option offers self-service and, after proper instructions beforehand, can save service desk calls and make users more productive.</p>
+<h2 id="managed_reset">Managed Reset<a class="headerlink" href="#managed_reset" title="Permanent link">&para;</a></h2>
+<p>Windows 10 devices in Smart Workspace are managed with Microsoft Endpoint Manager / Intune and enrolled using the Autopilot process. Upon onboarding a device, the device is Azure Active Directory joined and enrolled in Intune. From the Intune management console, the following options are available for administrators :</p>
+<h3 id="wipe_the_device">Wipe the device<a class="headerlink" href="#wipe_the_device" title="Permanent link">&para;</a></h3>
+<p>This option will remove the device from Intune management and triggers a device reset. Windows 10 is re-installed, removing all data and applications from the device. This option typically is used when a device is lost or stolen, or when the device is otherwise no longer in use, but it can also be used when a device has issues or is to be handed over to a different user.</p>
+<p>Additionally, the following options can be chosen by the administrator before the wipe is launched:</p>
+<ul>
+<li>Wipe the device but keep enrollment state and associated user account</li>
+<li>Wipe the device and continue, even when the device loses power
+The first option can be used to reset a device which is used by the same user after the reset is complete, keeping the user data untouched. The second option should only (still optional) be chosen when the device is lost or stolen.</li>
+</ul>
+<p>When the wipe is complete, the device will launch in the ‘Out of The Box Experience’ (OOBE) state, where the user can re-enroll the device into management using the Autopilot process.</p>
+<h3 id="fresh_start">Fresh Start<a class="headerlink" href="#fresh_start" title="Permanent link">&para;</a></h3>
+<p>The fresh start option will remove the device from Intune management and initiate a reset (reinstallation) of Windows 10. After selecting this option, the administrator can choose to retain user data on the device.
+When the reset is complete, the device will launch in the ‘Out of The Box Experience’ state, where the user can re-enroll the device into management using the Autopilot process.</p>
+<p>The fresh restart looks similar to the Wipe action. Key difference is that using this option will also remove any OEM pre-loaded applications, such as Dell Command Update on Dell computers. If you want to get rid of bloat ware, use this option.</p>
+<h3 id="autopilot_reset">Autopilot Reset<a class="headerlink" href="#autopilot_reset" title="Permanent link">&para;</a></h3>
+<p>Initiating an Autopilot Reset will re-install Windows 10 on the device. However, this option maintains the Intune Enrollment state in Azure AD and Intune. Autopilot Reset also maintains the region, language and keyboard settings and the configured Wi-Fi connection. As the enrollment state is preserved but the user data is removed, this is a good option when a device needs to be handed over to another user in the organization.</p>
+<p>There are some caveats in this option. First of all, the device is not going through the OOBE (and Autopilot) process but directly boots into Windows – using the preserved settings. When the Enrollment Status Page (ESP) is not enabled, users can directly login to Windows. When the ESP is enabled, users might see less policies and apps to be applied. Once complete, some settings and / or apps might not yet be configured or installed. The experienced behavior depends on the ESP configuration for blocking the device use before all or a selection of apps is installed. Remaining apps and settings will come through after the device (re-)synchronizes with Intune but for end users, it might look configuration has failed. The synchronization can be forced from the Intune management portal.</p>
+<p>Notes for Self-deployment and Pre-provisioning
+For devices that are enrolled using one of the Autopilot ‘Self-Deploying’ or ‘Pre-Provisioning’  modes, it is necessary the device is removed from Intune prior to (re-)enrolling the device, otherwise enrollment will fail. That means that the Autopilot Reset option cannot be used in these cases. Typically, the device is removed from Intune automatically when ‘Wipe’ or “Fresh Start’ is used. Some organizations use an USB drive with the Windows 10 installation media to re-enroll devices. This approach can still be used but the device needs to be removed from the Intune portal prior to reinstallation of the operating system.</p>
+<h3 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h3>
+<p>There are different options in Intune to reset a device. Depending on the goal and purpose, one option may prefer over the other. In all cases, a good understanding of the key differences between options is required. These are mentioned in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Device is removed from Intune</th>
+<th>Retain user data</th>
+<th>Retain enrollment state</th>
+<th>Retain OEM preloaded apps</th>
+<th>Launch in OOBE after reset</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wipe</td>
+<td>Yes</td>
+<td>Optional</td>
+<td>Optional</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Fresh Start</td>
+<td>Yes</td>
+<td>Optional</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Installation Media</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>To reset a device, followed by a new Autopilot enrollment, choose Wipe</li>
+<li>To start with a fresh Windows 10 installation, removing OEM pre-installed apps, choose Fresh Start</li>
+<li>To quickly reset a device that will be re-used by the same or another user, select Autopilot Reset. However, this option cannot be used for self-deploying or pre-provisioning profiles.</li>
+<li>When a device is lost or stolen, select Wipe with the option to continue even when power is lost.</li>
+</ul>
+<p>Since there is no user data on the device in Smart Workspace (this is stored in OneDrive for Business, Teams or SharePoint), we typically do not choose to retain user data upon device resets.</p>
+<p>The preferred option in all cases is to use ‘Wipe’, without retaining the enrollment state.</p>
+<h2 id="user_initiated_reset_self-service">User initiated reset (self-service)<a class="headerlink" href="#user_initiated_reset_self-service" title="Permanent link">&para;</a></h2>
+<p>A user can also reset a device from the Intune Company Portal when the device is associated with this same user. This typically is the case for personal used (but company owned) devices such as laptops and is not the case for shared devices, such as desktop computers - devices that are enrolled using the Autopilot Self-Deploying profile. Users also cannot reset a device when it is assigned to a different user.</p>
+<p>If the Company portal app is installed on the device, the user can launch it, select the device from all devices that are registered to this user and choose to reset the device. The device then will be wiped, where all apps and user data are removed, and Windows 10 is reinstalled. The device will boot in the OOBE state when the wipe is complete. The user then can re-enroll the device using the Autopilot service.</p>
+<p>If the company portal app is not installed, users can use the <a href="https://portal.manage.microsoft.com/" target="_blank">Company Portal Website</a>. In the devices area, users can see all devices registered to them and select the device of interest. In the menu, users select the option to reset the device:</p>
+<p><img alt="CompanyPortal" class="center" src="../img/companyportal.png" /></p>
+<h2 id="local_reset">Local Reset<a class="headerlink" href="#local_reset" title="Permanent link">&para;</a></h2>
+<p>For managed and user-initiated resets, it is required that an internet connection is available, and the device still synchronizes with Intune. After all, the reset command is initiated from the Intune management or company portal and needs to be send to and picked up by the device. When the device no longer synchronizes with Intune, the following options are available to reset the device. Note that for ‘Self-Deploying’ or ‘Pre-Provisioning’ profiles, the device must be removed manually.</p>
+<h3 id="reset_from_the_settings_app_in_windows_10">Reset from the Settings App in Windows 10<a class="headerlink" href="#reset_from_the_settings_app_in_windows_10" title="Permanent link">&para;</a></h3>
+<p>Login to the device with an administrator account and in the settings apps, select Update and Security, Recovery and then Reset this PC. Optionally, select Keep my files to retain user data. This option is comparable with the Wipe action.</p>
+<h3 id="reset_from_the_login_screen">Reset from the login screen<a class="headerlink" href="#reset_from_the_login_screen" title="Permanent link">&para;</a></h3>
+<p>When Windows boots and launches but you no longer can login into Windows, you can initiate the reset from the login screen. To do so, keep the Shift key pressed and restart Windows from the login screen. This will boot into recovery mode from where you can reset Windows. Note that you need the Bitlocker recovery key to continue. Normally, this key is stored in Azure Active Directory.</p>
+<h3 id="autopilot_reset_from_login_screen">Autopilot reset from login screen<a class="headerlink" href="#autopilot_reset_from_login_screen" title="Permanent link">&para;</a></h3>
+<p>When enabled, an additional option is available in the sign-in options which initiates an Autopilot reset. The reset can also be initiated with the keystrokes CTRL + Windows key + R on the login screen. An administrator account is required to login, the behavior is similar to an Autopilot Reset initiated from the Intune management portal. Note that Intune Synchronization is still required for this option.</p>
+<h2 id="retire_and_delete_devices">Retire and delete devices<a class="headerlink" href="#retire_and_delete_devices" title="Permanent link">&para;</a></h2>
+<p>The Intune management portal also has the options to Delete or Retire a device. When chosen, the device is removed from management and managed apps and data are removed from the device. Note that this may cause the device becoming unusable, as you no longer can log in with an Azure AD account. Since the Bitlocker recovery key is also stored in Azure AD and may be removed when a device is removed – you no longer can use the device recovery to reset the device. Reinstallation from Windows 10 media would then be the only option.</p>
+<ul>
+<li>The Delete option is only to be used when the device is no longer in use in the organization. However, when a reset is initiated from the device because it no longer syncs with Intune, a delete can be initiated directly when the reset is initiated on the device. This will make sure the device is properly re-enrolled into management. Do not remove the device from Azure AD.</li>
+<li>The Retire option is meant for BYOD devices only, that are typically not Azure AD joined but enrolled into Intune management only and need to be removed from management, without resetting Windows 10.</li>
+</ul>
+<h2 id="appendix_device_registrations_in_azure_ad_and_intune">Appendix: Device registrations in Azure AD and Intune<a class="headerlink" href="#appendix_device_registrations_in_azure_ad_and_intune" title="Permanent link">&para;</a></h2>
+<p>For successful usage of Intune and Autopilot during the lifecycle for a device, it is important to understand the different device registrations in the management environment. The end-result in all cases is to use Autopilot deployed devices which are Azure AD joined and Intune enrolled. To achieve this result, the following actions must be done, and in this order.</p>
+<p>We’ll start with a new device, that is not used before.</p>
+<ol>
+<li>
+<p>Register the device in Autopilot. To register the device, a csv-file with the device specific hash-id, is imported in Endpoint Manager. The hash-id can be seen as a device signature where the Autopilot service links the device to a specific organization. The import of hash files is done by Sogeti engineers and results in the following registrations:</p>
+<ul>
+<li>A device record in Autopilot, using the device serial number. A group tag is read from the CSV file to specify the device role in the environment (laptop, shared device, kiosk device, etc.). Azure AD dynamic groups contain devices based on these group tags, the groups are used to assign profiles, policies, and apps in Intune.</li>
+<li>A device registration in Azure AD. This registration contains two important attributes: the device is an autopilot device and the group tag. Both are used in Azure AD dynamic groups, if this registration is corrupted then the groups might not be populated correctly. Therefore, removing the registration from Azure AD is blocked if the device is also registered as an Autopilot device. On first creation of this record, the device state is disabled and will be enabled once the device is enrolled.</li>
+</ul>
+</li>
+<li>
+<p>Enroll the device with the Autopilot enrollment process. During this process, the device is Azure AD joined, on which the device record in Azure AD is updated with device specific information. This device record is also set to Enabled. Secondly, the device is enrolled in Intune. Upon enrollment, the device is registered with a record in Intune.</p>
+</li>
+</ol>
+<p>In normal operation, the Autopilot registration and Azure AD device registration do not require changes or updates by an admin. The only change that can be required, is changing the Group Tag in the Autopilot registration, for example when the device role is changed or when the current Group Tag is incorrect. The registration in Intune can require the following updates:</p>
+<ol>
+<li>When a device is reset (using the wipe or fresh start procedures described in the previous paragraphs), the device is automatically removed from Intune. Upon re-enrollment, the device is again added to Intune with a new record.</li>
+<li>In some cases, for example when the device is reset using manual intervention, the device record also needs to be removed manually. This can be achieved using the Delete option in the <a href="https://endpoint.microsoft.com/#blade/Microsoft_Intune_DeviceSettings/DevicesWindowsMenu/windowsDevices" target="_blank">Intune management portal</a>.</li>
+</ol>
+<p>Resume:</p>
+<ul>
+<li>In the Autopilot device enrollment process, the device is registered in Autopilot, Azure AD, and Intune.</li>
+<li>Only the Intune record is created, updated or deleted during the device lifecycle and (re-)enrollments.</li>
+<li>
+<p>Do not remove or change the device records in Autopilot or Azure AD as this can lead to unexpected results. When the registration is out of order, follow these steps (typically carried out by a Sogeti engineer):</p>
+<ol>
+<li>Remove (delete) the device from Intune</li>
+<li>Delete the device from Autopilot</li>
+<li>Delete the record for the device in Azure AD</li>
+<li>Re-import the device using the csv file with the device specific hash</li>
+<li>Enroll the device as it where a new device</li>
+</ol>
+</li>
+</ul>
+<p>Wait 10-15 minutes after removing the device from Azure AD and importing the device in Autopilot in order to allow the Autopilot service properly sync the changes.</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; Sogeti
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/sogeti_nl" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://www.sogeti.nl/" target="_blank" rel="noopener" title="www.sogeti.nl" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M172.5 131.1c55.6-55.59 148-55.59 203.6 0 50 50 57.4 129.7 16.3 187.2l-1.1 1.6c-10.3 14.3-30.3 17.7-44.6 7.4-14.4-10.3-17.8-30.3-7.5-44.6l1.1-1.6c22.9-32.1 19.3-76-8.6-103.9-31.4-31.4-82.5-31.4-114 0L105.5 289.5c-31.51 30.6-31.51 82.5 0 114 27.8 27.9 71.8 31.5 103.8 8.6l1.6-2c14.4-9.4 34.4-6.1 44.6 8.3 10.3 14.4 7 34.4-7.4 44.7l-1.6 1.1c-58.4 41.1-136.3 34.5-186.29-15.4-56.469-56.5-56.469-148.1 0-204.5L172.5 131.1zm295 248.9c-56.5 56.5-148 56.5-204.5 0-50-50-56.5-128.8-15.4-186.3l1.1-1.6c9.4-14.3 29.4-17.7 44.6-7.4 14.4 9.4 17.8 29.4 7.5 44.6l-1.1 1.6c-22.9 31.2-19.3 76 8.6 103.9 31.4 31.4 82.5 31.4 114 0l112.2-112.3c31.5-31.5 31.5-83.4 0-114-27.8-27.87-71.8-31.51-103.8-8.6l-1.6 1.1c-14.4 10.3-34.4 6.1-44.6-7.42-10.3-14.38-7-34.37 7.4-44.64l1.6-1.12C451 6.731 529.8 13.25 579.8 63.24c56.5 56.46 56.5 148.06 0 204.46L467.5 380z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.instant", "navigation.expand", "search.share"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../../assets/javascripts/workers/search.092fa1f6.min.js"}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.5a9542cf.min.js"></script>
+      
+    
+  </body>
+</html>

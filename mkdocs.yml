@@ -1,0 +1,114 @@
+site_name: Workspace Learning Track
+site_url: https://evdplassgti.github.io
+
+theme:
+  name: material
+  logo: assets/logo.png
+  font:
+    text: Ubuntu Mono
+    code: Ubuntu Mono
+  palette:
+    primary: light blue
+    accent: blue
+    scheme: sogeti
+  features:
+    - navigation.tabs
+    - navigation.instant
+    - navigation.expand
+    - search.share
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - Home:
+      - 'Welcome': 'home/welcome/index.md'
+      - 'Introduction' : 'home/introduction/index.md'
+      - 'Overview Track' : 'home/overview/index.md'
+      - 'Timeline': 'home/timeline/index.md'
+      - 'Downloads': 'home/downloads/ssw-downloads.md'
+  - Certification:
+      - 'Workspace certification': 'certification/index.md'
+      - 'Cloud Fundamentals':
+          - 'Introduction to MS-900': 'certification/ms-900/index.md'
+          - 'Certification resources': 'certification/ms-900/index.md'
+          - 'Chapter 1 [text]': 
+              - '[text something #1]': 'certification/ms-900/chapter1/index.md'
+              - '[text something #2]': 'certification/ms-900/chapter1/index.md'
+          - 'Chapter 2 [text]': 
+              - '[text something #1]': 'certification/ms-900/chapter1/index.md'
+              - '[text something #2]': 'certification/ms-900/chapter1/index.md'
+          - 'Chapter 3 [text]': 
+              - '[text something #1]': 'certification/ms-900/chapter1/index.md'
+              - '[text something #2]': 'certification/ms-900/chapter1/index.md'
+          - 'Chapter 4 [text]': 
+              - '[text something #1]': 'certification/ms-900/chapter1/index.md'
+              - '[text something #2]': 'certification/ms-900/chapter1/index.md'
+      - 'Security Fundamentals':
+          - 'Introduction to SC-900': 'certification/sc-900/index.md'
+          - 'Certification resources': 'certification/sc-900/index.md'
+          - 'Chapter 1 [text]': 
+              - '[text something #1]': 'certification/sc-900/chapter1/index.md'
+              - '[text something #2]': 'certification/sc-900/chapter1/index.md'
+          - 'Chapter 2 [text]': 
+              - '[text something #1]': 'certification/sc-900/chapter1/index.md'
+              - '[text something #2]': 'certification/sc-900/chapter1/index.md'
+          - 'Chapter 3 [text]': 
+              - '[text something #1]': 'certification/sc-900/chapter1/index.md'
+              - '[text something #2]': 'certification/sc-900/chapter1/index.md'
+          - 'Chapter 4 [text]': 
+              - '[text something #1]': 'certification/sc-900/chapter1/index.md'
+              - '[text something #2]': 'certification/sc-900/chapter1/index.md'
+  - Technologies:
+      - 'Defender for 365': 'technologies/defender/index.md'
+      - 'Exchange Online': 'technologies/exo/index.md'
+      - 'SharePoint Online': 'technologies/sp/index.md'
+      - 'OneDrive for Business': 'technologies/onedrive/index.md'
+      - 'Microsoft Teams': 'technologies/teams/index.md'
+      - 'Conditional Access': 'technologies/ca/index.md'
+      - 'PowerShell': 'technologies/powershell/index.md'
+  - Lab:
+      - 'Introduction labs': 'lab/index.md'
+      - 'SC-900':
+          - 'Lab 1': 'lab/sc-900/index.md'
+          - 'Lab 2': 'lab/sc-900/index.md'
+      - 'MD-100':
+          - 'Lab 1': 'lab/md-100/index.md'
+          - 'Lab 2': 'lab/md-100/index.md'
+      - 'MD-101':
+          - 'Lab 1': 'lab/md-101/index.md'
+          - 'Lab 2': 'lab/md-101/index.md'
+      - 'MS-100':
+          - 'Lab 1': 'lab/ms-100/index.md'
+          - 'Lab 2': 'lab/ms-100/index.md'  
+      - 'MS-101':
+          - 'Lab 1': 'lab/ms-101/index.md'
+          - 'Lab 2': 'lab/ms-101/index.md'      
+  - Additional:
+      - 'Additional Workspace information': 'remote-workspace/index.md'
+
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
+      separator: "_"
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.snippets
+  - def_list
+  - attr_list
+  - md_in_html
+  - footnotes:
+      SEPARATOR: _footnote_
+
+extra:
+  social:
+    - icon: fontawesome/brands/twitter
+      link: 'https://twitter.com/sogeti_nl'
+    - icon: fontawesome/solid/link
+      link: 'https://www.sogeti.nl/'
+  generator: false
+repo_url: https://github.com/evdplassgti/Workspace
+edit_uri: '/docs'
+copyright: Copyright &copy; Sogeti

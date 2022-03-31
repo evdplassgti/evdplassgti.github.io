@@ -1,0 +1,1849 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.11">
+    
+    
+      
+        <title>Onboard Application Packaging - Workspace Learning Track</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.50e68009.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#02a6f2">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:300,400,400i,700%7CUbuntu+Mono&display=fallback">
+        <style>:root{--md-text-font:"Ubuntu Mono";--md-code-font:"Ubuntu Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="sogeti" data-md-color-primary="light-blue" data-md-color-accent="blue">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#onboard_application_packaging" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Workspace Learning Track" class="md-header__button md-logo" aria-label="Workspace Learning Track" data-md-component="logo">
+      
+  <img src="../../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Workspace Learning Track
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Onboard Application Packaging
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/evdplassgti/Workspace/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../home/welcome/" class="md-tabs__link">
+        Home
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../certification/" class="md-tabs__link">
+        Certification
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../technologies/defender/" class="md-tabs__link">
+        Technologies
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../lab/" class="md-tabs__link">
+        Lab
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../remote-workspace/index.md" class="md-tabs__link">
+        Additional
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Workspace Learning Track" class="md-nav__button md-logo" aria-label="Workspace Learning Track" data-md-component="logo">
+      
+  <img src="../../../../assets/logo.png" alt="logo">
+
+    </a>
+    Workspace Learning Track
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/evdplassgti/Workspace/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" data-md-state="indeterminate" type="checkbox" id="__nav_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          Home
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Home" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Home
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../home/welcome/" class="md-nav__link">
+        Welcome
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../home/introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../home/overview/" class="md-nav__link">
+        Overview Track
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../home/timeline/" class="md-nav__link">
+        Timeline
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../home/downloads/ssw-downloads.md" class="md-nav__link">
+        Downloads
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Certification
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Certification" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Certification
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../certification/" class="md-nav__link">
+        Workspace certification
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" data-md-state="indeterminate" type="checkbox" id="__nav_2_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          Cloud Fundamentals
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cloud Fundamentals" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Cloud Fundamentals
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../certification/ms-900/" class="md-nav__link">
+        Introduction to MS-900
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../certification/ms-900/" class="md-nav__link">
+        Certification resources
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_3" data-md-state="indeterminate" type="checkbox" id="__nav_2_2_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_3">
+          Chapter 1 [text]
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 1 [text]" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 1 [text]
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../certification/ms-900/chapter1/" class="md-nav__link">
+        [text something #1]
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../certification/ms-900/chapter1/" class="md-nav__link">
+        [text something #2]
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_4" data-md-state="indeterminate" type="checkbox" id="__nav_2_2_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_4">
+          Chapter 2 [text]
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 2 [text]" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 2 [text]
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../certification/ms-900/chapter1/" class="md-nav__link">
+        [text something #1]
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../certification/ms-900/chapter1/" class="md-nav__link">
+        [text something #2]
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_5" data-md-state="indeterminate" type="checkbox" id="__nav_2_2_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_5">
+          Chapter 3 [text]
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 3 [text]" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 3 [text]
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../certification/ms-900/chapter1/" class="md-nav__link">
+        [text something #1]
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../certification/ms-900/chapter1/" class="md-nav__link">
+        [text something #2]
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_6" data-md-state="indeterminate" type="checkbox" id="__nav_2_2_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_6">
+          Chapter 4 [text]
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 4 [text]" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 4 [text]
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../certification/ms-900/chapter1/" class="md-nav__link">
+        [text something #1]
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../certification/ms-900/chapter1/" class="md-nav__link">
+        [text something #2]
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" data-md-state="indeterminate" type="checkbox" id="__nav_2_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          Security Fundamentals
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Security Fundamentals" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Security Fundamentals
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../certification/sc-900/" class="md-nav__link">
+        Introduction to SC-900
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../certification/sc-900/" class="md-nav__link">
+        Certification resources
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_3" data-md-state="indeterminate" type="checkbox" id="__nav_2_3_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_3">
+          Chapter 1 [text]
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 1 [text]" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 1 [text]
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../certification/sc-900/chapter1/" class="md-nav__link">
+        [text something #1]
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../certification/sc-900/chapter1/" class="md-nav__link">
+        [text something #2]
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_4" data-md-state="indeterminate" type="checkbox" id="__nav_2_3_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_4">
+          Chapter 2 [text]
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 2 [text]" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 2 [text]
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../certification/sc-900/chapter1/" class="md-nav__link">
+        [text something #1]
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../certification/sc-900/chapter1/" class="md-nav__link">
+        [text something #2]
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_5" data-md-state="indeterminate" type="checkbox" id="__nav_2_3_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_5">
+          Chapter 3 [text]
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 3 [text]" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 3 [text]
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../certification/sc-900/chapter1/" class="md-nav__link">
+        [text something #1]
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../certification/sc-900/chapter1/" class="md-nav__link">
+        [text something #2]
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_6" data-md-state="indeterminate" type="checkbox" id="__nav_2_3_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_6">
+          Chapter 4 [text]
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chapter 4 [text]" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          Chapter 4 [text]
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../certification/sc-900/chapter1/" class="md-nav__link">
+        [text something #1]
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../certification/sc-900/chapter1/" class="md-nav__link">
+        [text something #2]
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Technologies
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Technologies" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Technologies
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../technologies/defender/" class="md-nav__link">
+        Defender for 365
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../technologies/exo/" class="md-nav__link">
+        Exchange Online
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../technologies/sp/" class="md-nav__link">
+        SharePoint Online
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../technologies/onedrive/" class="md-nav__link">
+        OneDrive for Business
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../technologies/teams/" class="md-nav__link">
+        Microsoft Teams
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../technologies/ca/" class="md-nav__link">
+        Conditional Access
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../technologies/powershell/" class="md-nav__link">
+        PowerShell
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Lab
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lab" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Lab
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lab/" class="md-nav__link">
+        Introduction labs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" data-md-state="indeterminate" type="checkbox" id="__nav_4_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2">
+          SC-900
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="SC-900" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          SC-900
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lab/sc-900/" class="md-nav__link">
+        Lab 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lab/sc-900/" class="md-nav__link">
+        Lab 2
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" data-md-state="indeterminate" type="checkbox" id="__nav_4_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3">
+          MD-100
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="MD-100" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          MD-100
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lab/md-100/" class="md-nav__link">
+        Lab 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lab/md-100/" class="md-nav__link">
+        Lab 2
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" data-md-state="indeterminate" type="checkbox" id="__nav_4_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4">
+          MD-101
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="MD-101" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          MD-101
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lab/md-101/" class="md-nav__link">
+        Lab 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lab/md-101/" class="md-nav__link">
+        Lab 2
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" data-md-state="indeterminate" type="checkbox" id="__nav_4_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5">
+          MS-100
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="MS-100" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          MS-100
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lab/ms-100/" class="md-nav__link">
+        Lab 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lab/ms-100/" class="md-nav__link">
+        Lab 2
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6" data-md-state="indeterminate" type="checkbox" id="__nav_4_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_6">
+          MS-101
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="MS-101" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          MS-101
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lab/ms-101/" class="md-nav__link">
+        Lab 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lab/ms-101/" class="md-nav__link">
+        Lab 2
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" data-md-state="indeterminate" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Additional
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Additional" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Additional
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../remote-workspace/index.md" class="md-nav__link">
+        Additional Workspace information
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onboarding_packaging" class="md-nav__link">
+    Onboarding packaging
+  </a>
+  
+    <nav class="md-nav" aria-label="Onboarding packaging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#onboarding_steps" class="md-nav__link">
+    Onboarding steps
+  </a>
+  
+    <nav class="md-nav" aria-label="Onboarding steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#collect" class="md-nav__link">
+    Collect
+  </a>
+  
+    <nav class="md-nav" aria-label="Collect">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#determine_application_list" class="md-nav__link">
+    Determine Application list
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run" class="md-nav__link">
+    Run
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+<a href="https://github.com/docs/_archive/application-portal/packaging/onboarding/index.md" title="Edit this page" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+<h1 id="onboard_application_packaging">Onboard Application Packaging<a class="headerlink" href="#onboard_application_packaging" title="Permanent link">&para;</a></h1>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>The Sogeti Smart Workspace is deployed with standard applications, usually part of the following set:</p>
+<ul>
+<li>Applications that are part of the Operating System, such as the Edge browser, Notepad, File Explorer and the OneDrive synchronization client.</li>
+<li>Applications part of the Office 365 suite, such as Outlook, Word, Excel, PowerPoint and Teams.</li>
+<li>Generic applications, such as 7Zip and Adobe Acrobat Reader.</li>
+<li>Management software and agents, such as the Nexthink collector package and Liquit agent.</li>
+</ul>
+<p>Next to these generic applications, organizations make use of applications specific for their organization or business, called Line of Business applications (LOB or LOB-apps).  </p>
+<p>To make sure all applications are available on time and deployed automatically and without errors. applications are repackaged to an automatically deployable format, such as unattended setups, App-V, MSIX or MSI packages. Regardless the underlying technology, the activities to create such deployable applications are generically called <em>packaging</em>. This chapter describes the standard approach for packaging and the aim and result for each of the different steps in the process.</p>
+<p>Alongside so called <em>win32 apps</em>, we distinguish the following other types of applications:</p>
+<ul>
+<li>Applications from the <em>Windows Store</em>. Users can install these applications by themselves as Store Apps do not require administrator permissions. Optionally, applications are configured in the Microsoft Store for Business by the organization to whitelist applications. Users only can install applications approved apps from the Store for Business, the consumer store is not available for them.</li>
+<li><em>Web- or SaaS apps</em>. These apps generically do not need additional configuration and run directly from a (modern) browser, that is included in the workspace.</li>
+</ul>
+<p>These applications will not be packaged but to make sure the applications are offered and work according to business and user requirements, an intake for these applications is always done.</p>
+<p>A well implemented process is key-factor for the success of application deployment in the Sogeti Smart Workspace. Therefore, proper alignment between business and IT and between Sogeti and the customer must be in place during implementation of the process. To help in discussion and explanation to the customer, the following design guide might be helpful. Download a copy in Dutch <a href="/assets/doc/Design Guides/SSW Design Guide - Packaging process referentie (NL).pptx"><img alt="ppt" src="/assets/img/powerpnt.png" /></a> or English <a href="/assets/doc/Design Guides/SSW Design Guide - Packaging process reference (EN).pptx"><img alt="ppt" src="/assets/img/powerpnt.png" /></a>.</p>
+<h2 id="onboarding_packaging">Onboarding packaging<a class="headerlink" href="#onboarding_packaging" title="Permanent link">&para;</a></h2>
+<p>For onboarding, we distinguish between two different, but related activities:</p>
+<ul>
+<li>Onboarding Sogeti Smart Workspace. In this phase, we speak of the SSW service as a whole.</li>
+<li>Onboarding packaging. In this phase, we speak of setting up the packaging process for a specific customer.</li>
+</ul>
+<p>For onboarding the SSW service, all required applications need to be configured for deployment and potentially repackaged to suit requirements and standards. During this phase, the standard packaging process is followed for each application. Activities during onboarding of SSW differ from Run only in volume.</p>
+<h3 id="onboarding_steps">Onboarding steps<a class="headerlink" href="#onboarding_steps" title="Permanent link">&para;</a></h3>
+<p>The following figure shows the high-level phasing for the implementation and startup for the packaging activities. This phasing is used for activities during onboarding the Sogeti Smart Workspace. The first step is a crucial one to take as it determines the scope and workload during onboarding.</p>
+<p><img alt="onboarding steps" src="img/pkg-onboardsteps.png" /></p>
+<h4 id="collect">Collect<a class="headerlink" href="#collect" title="Permanent link">&para;</a></h4>
+<p>In this phase, the final list of applications is determined. This step is important because the list is required to be used in activity planning and to make sure applications are ready for use on time during SSW implementation. The workspace implementation is normally phased - by department or groups of users - the list is used so the packaging process can connect accordingly. The Collect phase is executed by the customer, or the customer is at least in the lead and Sogeti can support.</p>
+<h5 id="determine_application_list">Determine Application list<a class="headerlink" href="#determine_application_list" title="Permanent link">&para;</a></h5>
+<p>Setting up the application list is determining which applications are required within the Smart Workspace service and by whom the applications are being used (group, department, division, etc.). Generally, this list is not yet available and setting up a proper, accurate list is not an easy task. To start filling the list, the following sources can be useful but success depends on if they are present, current and available:</p>
+<ul>
+<li>Configuration Management Database (CMDB).</li>
+<li>An application list or inventory from the current management tooling, such as Endpoint Manager or SCCM.</li>
+<li>A new inventory of the installed applications in the current workspace environment using scan tooling or software asset management tooling.</li>
+</ul>
+<p>Usually, the inventoried list of applications is not yet accurate and contains pollution, in the form of applications that are no longer being used, apps found in different versions or apps installed by end-users themselves and are not managed, etc. Therefore, the list needs cleaning as shown in the following figure:
+<img alt="application inventory" class="center" src="img/pkg-app-inventory.png" /></p>
+<p>This four step process should result in a clean list of applications, at least accurate enough to start with. Some open ends may be picked up during the project when inventory of applications continues in parallel with the other activities.</p>
+<ol>
+<li>Inventory.
+In this step, applications are inventoried. The exact activities depend on the organization. Maybe a list is already present, for example setup before the transition to the new workspace, or an up-to-date CMDB. Is no such list available, it needs to be setup. Technical inventory can be done using the (existing) workspace management tooling or Software Asset Management tooling (SAM, such as Snow). For the packaging process, it is important the list contains detailed meta-data for the applications, such as owner, functional- and technical manager, key-user, etc. These roles are required later on, during rationalization and categorization and during packaging of the applications (intake and test).</li>
+<li>Categorize.
+Organizing the application list in different categories, helps the application list to be manageable, simplifies application assignment and helps cleaning up further in the process. Examples of categories are:<ul>
+<li>Categorization based on target group, such as base software, function or role specific or used for a specific business process.</li>
+<li>Categorization based on application type, such as standalone, client/server, web app, shortcut, etc.</li>
+<li>Categorization based on integration with other applications, such as plugins, or apps that combine into a suite of applications, such as AutoCAD or Adobe Cloud.</li>
+<li>Categorization based on functionality, for example core office apps, development tool, financial application, etc.  </li>
+</ul>
+</li>
+<li>Rationalize.
+Rationalization of the application list aims at removing doubles (including multiple versions of the same app and apps with similar functionality), unused applications and unwanted applications from the total list. To achieve this, the following requirements must be met:<ul>
+<li>the project must have mandate and consensus to make decisions in removal of apps.</li>
+<li>the project members must have proper knowledge of the application portfolio, application functionality and/or usage and the business processes the apps support.</li>
+</ul>
+</li>
+<li>Prioritize.
+When the application list is (nearly) complete, prioritizing the applications determines when the packages for the applications should be available and in which order packages should be build. This makes sure packages are available when required for deployment according to the deployment schedule. The other way around - the application list, combined with packaging progress, can be used to determine which users, groups or departments can be schedules for roll out.</li>
+</ol>
+<h4 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h4>
+<p>In this phase, the packaging process is setup and implemented for the customer and focusses on making mutual agreements. Starting point is the standard Sogeti packaging process, added with the following activities:<br />
+<img alt="application inventory" class="center" src="img/pkg-setup.png" /></p>
+<ol>
+<li>Define project resourcing.
+Based on the application list, the required resources are estimated. This not only involves resources for building the packages but also concerns business users for delivering information, application software- and media and capacity to test and accept the applications after packaging is complete.</li>
+<li>Finalize packaging standards and guidelines.
+This is more a formal, but still an important step in the process. Sogeti will bring in the packaging guidelines for Sogeti Smart Workspace, which should be known to everyone involved in the application deployment process. Depending on the project scope, the scope of packaging guidelines might be changed. For example, if packaging for a remote workspace is required.</li>
+<li>Agree on planning.
+Based on the project plan for role out and the application list, detailed planning for the packaging activities is established. Generally, this is a mutual agreement between Sogeti and client project management.</li>
+<li>
+<p>Setup process agreements.
+This step is all about process agreements for the following subjects:</p>
+<ul>
+<li>Addition and removal of applications to and from the list.</li>
+<li>(Re-)planning of applications and priorities on the list.</li>
+<li>The way software and documentation is delivered, including technical implementation (for example an ftp server, specific folder on a file share, etc).</li>
+<li>Procedure for planning and invitation for intake, test and acceptance.</li>
+<li>Involvement of application owners, managers and/or key-users.</li>
+<li>Involvement of intake, package and test engineers, including on- and off-boarding.</li>
+<li>Escalation procedure to solve generic issues and issues related to the workspace solution and its architecture.</li>
+</ul>
+</li>
+</ol>
+<p>It is advisable to acknowledge and communicate procedures and agreements with all stake holders, for example in a kick-off meeting. This meeting should also address the packaging process, discussed in the following paragraph, to establish good understanding, awareness and clear expectations. This helps in a smooth packaging process later on during the project.</p>
+<h4 id="run">Run<a class="headerlink" href="#run" title="Permanent link">&para;</a></h4>
+<p>When all prerequisites have been met - the application list is (almost) complete, agreements have been made and the packaging team is installed, including stakeholders from the business - the packaging activities can be started. The process is described in detail <a href="../process/">here</a>. Below you can find a summary of the steps in the process and where the responsibility lies. Every package will go through the steps mentioned:</p>
+<p><img alt="SSW Packaging" src="../process/img/pkgprocess.png" title="SSW Packaging" /></p>
+<p>steps 1 (request) and 6 (deployment): these steps have a Business/client focus. The client determines which application is required and appoints users who need the particular application.</p>
+<p>steps 2 (intake) and 5 (acceptance): these steps have a joined focus. The intake and acceptance test will be carried out together. The client delivers information, Sogeti will execute or facilitate in these steps.</p>
+<p>steps 3 (build) and 4 (test): these steps have a Sogeti focus. The activities in these steps will be managed and executed under Sogeti's responsibility and by Sogeti.</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; Sogeti
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/sogeti_nl" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://www.sogeti.nl/" target="_blank" rel="noopener" title="www.sogeti.nl" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M172.5 131.1c55.6-55.59 148-55.59 203.6 0 50 50 57.4 129.7 16.3 187.2l-1.1 1.6c-10.3 14.3-30.3 17.7-44.6 7.4-14.4-10.3-17.8-30.3-7.5-44.6l1.1-1.6c22.9-32.1 19.3-76-8.6-103.9-31.4-31.4-82.5-31.4-114 0L105.5 289.5c-31.51 30.6-31.51 82.5 0 114 27.8 27.9 71.8 31.5 103.8 8.6l1.6-2c14.4-9.4 34.4-6.1 44.6 8.3 10.3 14.4 7 34.4-7.4 44.7l-1.6 1.1c-58.4 41.1-136.3 34.5-186.29-15.4-56.469-56.5-56.469-148.1 0-204.5L172.5 131.1zm295 248.9c-56.5 56.5-148 56.5-204.5 0-50-50-56.5-128.8-15.4-186.3l1.1-1.6c9.4-14.3 29.4-17.7 44.6-7.4 14.4 9.4 17.8 29.4 7.5 44.6l-1.1 1.6c-22.9 31.2-19.3 76 8.6 103.9 31.4 31.4 82.5 31.4 114 0l112.2-112.3c31.5-31.5 31.5-83.4 0-114-27.8-27.87-71.8-31.51-103.8-8.6l-1.6 1.1c-14.4 10.3-34.4 6.1-44.6-7.42-10.3-14.38-7-34.37 7.4-44.64l1.6-1.12C451 6.731 529.8 13.25 579.8 63.24c56.5 56.46 56.5 148.06 0 204.46L467.5 380z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.instant", "navigation.expand", "search.share"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../assets/javascripts/workers/search.092fa1f6.min.js"}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.5a9542cf.min.js"></script>
+      
+    
+  </body>
+</html>
