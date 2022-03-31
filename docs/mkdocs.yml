@@ -110,5 +110,5 @@ extra:
       link: 'https://www.sogeti.nl/'
   generator: false
 repo_url: https://github.com/evdplassgti/evdplassgti.github.io
-edit_uri: tree/dev/docs/docs
+edit_uri: tree/dev/docs/site
 copyright: Copyright &copy; Sogeti
